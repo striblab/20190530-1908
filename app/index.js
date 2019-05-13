@@ -97,6 +97,9 @@ utils.environmentNoting();
 //https://github.com/s-yadav/iv-viewer
 
 
+const image = document.querySelector('#image');
+// const options = {"zoomValue":100,"maxZoom":500,}
+const viewer = new ImageViewer(image,{"zoomValue":100,"maxZoom":1500,"snapView":true,"refreshOnResize":true,"zoomOnOmuseWheel":true});
 
 //annotations
 //https://github.com/flipbit/jquery-image-annotate
