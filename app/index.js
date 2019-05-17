@@ -98,9 +98,9 @@ utils.environmentNoting();
 // const image = document.querySelector('#bigphoto');
 // const options = {"zoomValue":100,"maxZoom":500,}
 // const viewer = new ImageViewer(image,{"zoomValue":100,"maxZoom":1500,"snapView":true,"refreshOnResize":true,"zoomOnOmuseWheel":true});
-const container = document.querySelector('#bigphoto');
+const container = document.querySelector('#image');
 const viewer = new ImageViewer(container, {'zoomValue':100,'maxZoom':1500,'snapView':true,'refreshOnResize':true,'zoomOnOmuseWheel':true});
-viewer.load('img/lo_res.jpg', 'img/panorama.jpg');
+// viewer.load('img/lo_res.jpg');
 
 //annotations
 //https://github.com/flipbit/jquery-image-annotate
