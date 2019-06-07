@@ -11,7 +11,7 @@
 
 // Dependencies
 import utils from './shared/utils.js';
-import ImageViewer from 'iv-viewer';
+// import ImageViewer from 'iv-viewer';
 import * as L from 'leaflet';
 
 // Mark page with note about development or staging
@@ -99,8 +99,8 @@ utils.environmentNoting();
 // const image = document.querySelector('#bigphoto');
 // const options = {"zoomValue":100,"maxZoom":500,}
 // const viewer = new ImageViewer(image,{"zoomValue":100,"maxZoom":1500,"snapView":true,"refreshOnResize":true,"zoomOnOmuseWheel":true});
-const container = document.querySelector('#image');
-const viewer = new ImageViewer(container, {'zoomValue':100,'maxZoom':1500,'snapView':true,'refreshOnResize':true,'zoomOnOmuseWheel':true});
+// const container = document.querySelector('#image');
+// const viewer = new ImageViewer(container, {'zoomValue':100,'maxZoom':1500,'snapView':true,'refreshOnResize':true,'zoomOnOmuseWheel':true});
 // viewer.load('img/lo_res.jpg');
 
 //annotations
@@ -113,19 +113,55 @@ const viewer = new ImageViewer(container, {'zoomValue':100,'maxZoom':1500,'snapV
 // Using leaflet.js to pan and zoom a big image.
 // See also: http://kempe.net/blog/2014/06/14/leaflet-pan-zoom-image.html
 
+
 // create the slippy map
+L.CursorHandler = L.Handler.extend({
+
+    addHooks: function () {
+        this._popup = new L.Popup();
+        this._map.on('mouseover', this._open, this);
+        this._map.on('mousemove', this._update, this);
+        this._map.on('mouseout', this._close, this);
+    },
+
+    removeHooks: function () {
+        this._map.off('mouseover', this._open, this);
+        this._map.off('mousemove', this._update, this);
+        this._map.off('mouseout', this._close, this);
+    },
+    
+    _open: function (e) {
+        this._update(e);
+        this._popup.openOn(this._map);
+    },
+
+    _close: function () {
+        this._map.closePopup(this._popup);
+    },
+
+    _update: function (e) {
+        this._popup.setLatLng(e.latlng)
+            .setContent(e.latlng.toString());
+    }
+
+    
+});
+
+L.Map.addInitHook('addHandler', 'cursor', L.CursorHandler);
+
 var map = L.map('image-map', {
-    minZoom: 1,
-    maxZoom: 4,
+    minZoom: 30,
+    maxZoom: 50,
     center: [0, 0],
-    zoom: 1,
+    zoom: 30,
+    cursor: true,
     crs: L.CRS.Simple
   });
   
   // dimensions of the image
-  var w = 2000,
-      h = 1500,
-      url = 'http://kempe.net/images/newspaper-big.jpg';
+  var w = $("#image-map").width(),
+      h = $("#image-map").height(),
+      url = 'img/panorama.jpg';
   
   // calculate the edges of the image, in coordinate space
   var southWest = map.unproject([0, h], map.getMaxZoom()-1);
