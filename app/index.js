@@ -150,14 +150,15 @@ L.CursorHandler = L.Handler.extend({
 L.Map.addInitHook('addHandler', 'cursor', L.CursorHandler);
 
 var map = L.map('image-map', {
-    minZoom: 30,
-    maxZoom: 50,
+    minZoom: 3,
+    maxZoom: 6,
     center: [0, 0],
-    zoom: 30,
+    zoom: 3,
     cursor: true,
     crs: L.CRS.Simple
   });
   
+
   // dimensions of the image
   var w = $("#image-map").width(),
       h = $("#image-map").height(),
@@ -174,3 +175,9 @@ var map = L.map('image-map', {
   
   // tell leaflet that the map is exactly as big as the image
   map.setMaxBounds(bounds);
+
+  function zoomTo() {
+    var lat = document.getElementById("lat").value;
+    var lng = document.getElementById("lng").value;
+    map.flyTo([lng, lat], 5);
+} 
