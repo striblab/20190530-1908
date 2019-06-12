@@ -176,7 +176,7 @@ var map = L.map('image-map', {
 
   var w = 1460,
       h = 230,
-      url = 'img/panorama.jpg';
+      url = 'img/panorama_test.jpg';
   
   var southWest = map.unproject([0, h], map.getMaxZoom()-1);
   var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
