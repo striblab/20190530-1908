@@ -168,7 +168,6 @@ var map = L.map('image-map', {
     minZoom: 3,
     maxNativeZoom: 12,
     maxZoom: 4,
-    smoothZoom: true,
     center: [0, 0],
     zoom: 3,
     cursor: true,
@@ -201,7 +200,7 @@ $("#navigation").on("click", function(){
 });
 
 $("#reset").on("click", function(){
-    zoomTo(0, 0, 3);
+    map.setView([0, 0], 3);
 });
 
 $("#in").on("click", function(){
