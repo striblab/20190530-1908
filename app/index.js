@@ -11,13 +11,9 @@
 
 // Dependencies
 import utils from './shared/utils.js';
-// import ImageViewer from 'iv-viewer';
-import * as L from 'leaflet';
 
 // Mark page with note about development or staging
 utils.environmentNoting();
-
-
 
 /**
  * Adding dependencies
@@ -93,28 +89,6 @@ utils.environmentNoting();
 // });
 
 
-
-//image viewer overlay
-
-// const image = document.querySelector('#bigphoto');
-// const options = {"zoomValue":100,"maxZoom":500,}
-// const viewer = new ImageViewer(image,{"zoomValue":100,"maxZoom":1500,"snapView":true,"refreshOnResize":true,"zoomOnOmuseWheel":true});
-// const container = document.querySelector('#image');
-// const viewer = new ImageViewer(container, {'zoomValue':100,'maxZoom':1500,'snapView':true,'refreshOnResize':true,'zoomOnOmuseWheel':true});
-// viewer.load('img/lo_res.jpg');
-
-//annotations
-//https://github.com/flipbit/jquery-image-annotate
-
-
-
-//highlight navigation
-
-// Using leaflet.js to pan and zoom a big image.
-// See also: http://kempe.net/blog/2014/06/14/leaflet-pan-zoom-image.html
-
-
-// create the slippy map
 L.CursorHandler = L.Handler.extend({
 
     addHooks: function () {
@@ -149,35 +123,91 @@ L.CursorHandler = L.Handler.extend({
 
 L.Map.addInitHook('addHandler', 'cursor', L.CursorHandler);
 
+L.Control.Loader = L.Control.extend({
+    options: {
+    },
+
+    onAdd: function (map) {
+        this.container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+
+
+        this.loaderContainer = L.DomUtil.create('div', 'leaflet-loader-container', this._map._container);
+        this.loaderBG = L.DomUtil.create('div', 'leaflet-loader-background', this.loaderContainer);
+        this.loader = L.DomUtil.create('div', 'leaflet-loader', this.loaderBG);
+        for (var i=0; i<3; i++) {
+            L.DomUtil.create('div', '', this.loader);
+        }
+
+        this._map.dragging.disable();
+        this._map.touchZoom.disable();
+        this._map.doubleClickZoom.disable();
+        this._map.scrollWheelZoom.disable();
+
+        return this.container;
+    },
+    hide: function () {
+        this.loaderBG.style.animation ="hideLoader 1s";
+        this.loaderBG.style.webkitAnimationName ="hideLoader 1s";
+        this.loaderBG.style.opacity ="0";
+        
+        var _this =this;
+        setTimeout(function (){_this.loaderContainer.style.display ="none";},500);
+        this._map.dragging.enable();
+        this._map.touchZoom.enable();
+        this._map.doubleClickZoom.enable();
+        this._map.scrollWheelZoom.enable();
+    }
+});
+
+L.control.loader = function(options) {
+  var newControl = new L.Control.Loader(options);
+  return newControl;
+};
+
 var map = L.map('image-map', {
     minZoom: 3,
-    maxZoom: 6,
+    maxNativeZoom: 12,
+    maxZoom: 4,
+    smoothZoom: true,
     center: [0, 0],
     zoom: 3,
     cursor: true,
     crs: L.CRS.Simple
   });
   
+//   var loader = L.control.loader().addTo(map);
+//   setTimeout(function (){loader.hide();},5000);
 
-  // dimensions of the image
-  var w = $("#image-map").width(),
-      h = $("#image-map").height(),
+  var w = 1460,
+      h = 230,
       url = 'img/panorama.jpg';
   
-  // calculate the edges of the image, in coordinate space
   var southWest = map.unproject([0, h], map.getMaxZoom()-1);
   var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
   var bounds = new L.LatLngBounds(southWest, northEast);
   
-  // add the image overlay, 
-  // so that it covers the entire map
   L.imageOverlay(url, bounds).addTo(map);
   
-  // tell leaflet that the map is exactly as big as the image
   map.setMaxBounds(bounds);
 
-  function zoomTo() {
-    var lat = document.getElementById("lat").value;
-    var lng = document.getElementById("lng").value;
-    map.flyTo([lng, lat], 5);
+  map.options.maxZoom = 7;
+
+function zoomTo(lat, long, zoom) {
+    map.flyTo([lat, long], zoom);
 } 
+
+$("#navigation").on("click", function(){
+    zoomTo(-17.10706, 114.23438, 7);
+});
+
+$("#reset").on("click", function(){
+    zoomTo(0, 0, 3);
+});
+
+$("#in").on("click", function(){
+    map.setZoom(map.getZoom() + 1);
+});
+
+$("#out").on("click", function(){
+    map.setZoom(map.getZoom() - 1);
+});
