@@ -174,9 +174,6 @@ var map = L.map('image-map', {
     cursor: true,
     crs: L.CRS.Simple
   });
-  
-//   var loader = L.control.loader().addTo(map);
-//   setTimeout(function (){loader.hide();},5000);
 
   var w = 1460,
       h = 230,
@@ -189,6 +186,9 @@ var map = L.map('image-map', {
   L.imageOverlay(url, bounds).addTo(map);
   
   map.setMaxBounds(bounds);
+
+//   var loader = L.control.loader().addTo(map);
+//   setTimeout(function (){loader.hide();},5000);
 
   map.options.maxZoom = 7;
 
