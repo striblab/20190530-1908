@@ -189,7 +189,7 @@ var map = L.map('image-map', {
 //   var loader = L.control.loader().addTo(map);
 //   setTimeout(function (){loader.hide();},5000);
 
-  map.options.maxZoom = 7;
+  map.options.maxZoom = 8;
 
 function zoomTo(lat, long, zoom) {
     map.flyTo([lat, long], zoom);
