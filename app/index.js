@@ -183,7 +183,9 @@ var map = L.map('image-map', {
   var bounds = new L.LatLngBounds(southWest, northEast);
   
   L.imageOverlay(url, bounds).addTo(map);
-  
+
+
+  map.scrollWheelZoom.disable()
   map.setMaxBounds(bounds);
 
 //   var loader = L.control.loader().addTo(map);

@@ -17,6 +17,10 @@
 	cursor:pointer;
 }
 
+.focus {
+	width:32%;
+	display:inline-block;
+}
 
 #image-map {
 	height:500px;
@@ -1086,3 +1090,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
 		-webkit-animation-fill-mode: both;
 						animation-fill-mode: both;
 		display: inline-block; }
+
+
+		@media screen and (max-width: 600px) {
+			.focus {
+				display:none;
+			}
+		  }
