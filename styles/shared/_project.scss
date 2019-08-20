@@ -9,7 +9,7 @@
  .navbutton { 
 	 display:inline-block;
 	 margin:5px;
-	 font-size:6em;
+	 font-size:5em;
  }
 
  .navbutton:hover { 
@@ -25,6 +25,7 @@
 #image-map {
 	height:500px;
 	background-color: #ffffff;
+	border:1px solid #333333;
 }
 
 .leaflet-control-attribution, .leaflet-top, .leaflet-left {
