@@ -187,7 +187,7 @@ var map = L.map('image-map', {
   L.imageOverlay(url, bounds).addTo(map);
 
 
-  map.scrollWheelZoom.disable()
+//   map.scrollWheelZoom.disable()
   map.setMaxBounds(bounds);
 
   var greenIcon = L.icon({
@@ -242,14 +242,14 @@ $('.submit-form').on('click', function(x) {
 
   var newMarker = new L.marker(e.latlng, {icon: greenIcon}).addTo(map);
 
-  alert("sent!");
-
   $("#nC").attr("value","");
   $("#dC").attr("value","");
   $("#nC").val("");
   $("#dC").val("");
   $("#xC").attr("value","");
   $("#yC").attr("value","");
+
+  x.stopPropagation();
 });
 
 });
