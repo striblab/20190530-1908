@@ -280,6 +280,9 @@ $("#out").on("click", function(){
     map.setZoom(map.getZoom() - 1);
 });
 
+$("#add").on("click", function(){
+    $("#form").slideToggle();
+});
 
 
 
