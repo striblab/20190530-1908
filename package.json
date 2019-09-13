@@ -17,6 +17,7 @@
   "dependencies": {
     "iv-viewer": "^2.0.0",
     "leaflet": "^1.5.1",
+    "leaflet-sidenav": "^0.5.2",
     "lodash": "^4.17.5",
     "query-string": "^4.3.2"
   },

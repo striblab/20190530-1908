@@ -104,7 +104,7 @@ utils.environmentNoting();
 //         this._map.off('mousemove', this._update, this);
 //         this._map.off('mouseout', this._close, this);
 //     },
-    
+
 //     _open: function (e) {
 //         this._update(e);
 //         this._popup.openOn(this._map);
@@ -119,7 +119,7 @@ utils.environmentNoting();
 //             .setContent(e.latlng.toString());
 //     }
 
-    
+
 // });
 
 //leaflet map stuff
@@ -151,7 +151,7 @@ L.Control.Loader = L.Control.extend({
         this.loaderBG.style.animation ="hideLoader 1s";
         this.loaderBG.style.webkitAnimationName ="hideLoader 1s";
         this.loaderBG.style.opacity ="0";
-        
+
         var _this =this;
         setTimeout(function (){_this.loaderContainer.style.display ="none";},500);
         this._map.dragging.enable();
@@ -178,40 +178,47 @@ var map = L.map('image-map', {
 
   var w = 1460,
       h = 230,
-      url = 'img/panorama_test3.jpg';
-  
+      url = './assets/images/panorama_test3.jpg';
+
   var southWest = map.unproject([0, h], map.getMaxZoom()-1);
   var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
   var bounds = new L.LatLngBounds(southWest, northEast);
-  
+
   L.imageOverlay(url, bounds).addTo(map);
 
+  // var sidebar = L.Control.Sidebar('sidebar', {
+  //           closeButton: true,
+  //           position: 'left'
+  //       });
+  // map.addControl(sidebar);
 
-//   map.scrollWheelZoom.disable()
+
+  // map.scrollWheelZoom.disable()
   map.setMaxBounds(bounds);
 
   var greenIcon = L.icon({
-	iconUrl: 'img/leaf-green.png',
-	shadowUrl: 'img/leaf-shadow.png',
+	iconUrl: './assets/images/leaf-green.png',
+	shadowUrl: './assets/images/leaf-shadow.png',
 
-	iconSize:     [10, 10], // size of the icon
+	iconSize:     [15, 15], // size of the icon
 	shadowSize:   [1, 1], // size of the shadow
 	iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
 	shadowAnchor: [0, 0],  // the same for the shadow
-	popupAnchor:  [0,0] // point from which the popup should open relative to the iconAnchor
+	popupAnchor:  [7.5,0] // point from which the popup should open relative to the iconAnchor
 });
 
-  map.on('click', function(e) {        
+  map.on('click', function(e) {
     var popLocation = e.latlng;
 
     $("#xC").attr("value",popLocation.lat);
     $("#yC").attr("value",popLocation.lng);
 
+
     // var popup = L.popup()
     // .setLatLng(popLocation)
     // .setContent(form)
-    // .openOn(map);   
-    
+    // .openOn(map);
+
     //form handling
 $.fn.serializeObject = function()
 {
@@ -258,9 +265,40 @@ $('.submit-form').on('click', function(x) {
 
 function zoomTo(lat, long, zoom) {
     map.flyTo([lat, long], zoom);
-} 
+}
 
+var test = L.marker([-13.62, 76.37], {icon: greenIcon}).bindPopup('this is a test').addTo(map);
+var test2 = L.marker([-20.876953125, 157.75], {icon: greenIcon}).bindPopup('this is another test').addTo(map);
 
+var sidebar = L.control.sidebar('sidebar', {
+            closeButton: true,
+            position: 'left'
+        });
+        map.addControl(sidebar);
+
+        // setTimeout(function () {
+        //     sidebar.show();
+        // }, 500);
+
+        // sidebar.on('show', function () {
+        //     console.log('Sidebar will be visible.');
+        // });
+        //
+        // sidebar.on('shown', function () {
+        //     console.log('Sidebar is visible.');
+        // });
+        //
+        // sidebar.on('hide', function () {
+        //     console.log('Sidebar will be hidden.');
+        // });
+        //
+        // sidebar.on('hidden', function () {
+        //     console.log('Sidebar is hidden.');
+        // });
+
+        L.DomEvent.on(sidebar.getCloseButton(), 'click', function () {
+            console.log('Close button clicked.');
+        });
 
 
 //navigation buttons
@@ -280,8 +318,18 @@ $("#out").on("click", function(){
     map.setZoom(map.getZoom() - 1);
 });
 
+// $("#add").on("click", function(){
+//     $("#form").toggle( "slide" );
+// });
+
+// $("#add").click(function(){
+//     $("#form").animate({
+//         width: "toggle"
+//     });
+// });
+
 $("#add").on("click", function(){
-    $("#form").slideToggle();
+    sidebar.toggle();
 });
 
 

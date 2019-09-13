@@ -1,0 +1,93 @@
+.wrapper-dropdown-1 {
+    display: block;
+    margin: 25px auto;
+    z-index: 900;
+    background: #ddd;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    padding: 8px;
+    position: relative;
+    width: 200px !important;
+    border: 1px solid #aaa;
+    -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 1px rgba(0,0,0,0.1);
+    font-size: 14px;
+    margin-bottom: -10px;
+}
+
+.container-lg h1 {
+  font-size: 70px;
+}
+
+#viewSwitch h2 {
+  margin-top: 65px;
+}
+
+#viewSwitch .subText p {
+  font-family: "Benton Sans", sans-serif;
+  font-size: 16px;
+  text-align: left;
+}
+
+ul.dropdown.months li {
+  padding: 3px 4px;
+}
+
+.navbutton#add, .navbutton#reset, .navbutton#in, .navbutton#out {
+  font-size: 14px;
+  font-family: "Benton Sans", sans-serif;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1px black;
+  fill: none;
+}
+
+.navbutton#add:hover, .navbutton#reset:hover, .navbutton#in:hover, .navbutton#out:hover {
+  font-size: 14px;
+  font-family: "Benton Sans", sans-serif;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1px black;
+  background-color: black;
+}
+
+#buttons {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+#followUp {
+  margin-top: 65px;
+}
+
+#flexContainer {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.card img {
+  max-width: 500px;
+}
+
+.card .cardCaption {
+  max-width: 500px;
+}
+
+#sidebar {
+  padding: 20px 20px;
+}
+
+.leaflet-container a.close {
+    color: #a9a9a9;
+    z-index: 1000;
+}
