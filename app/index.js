@@ -92,6 +92,10 @@ import dataLoad from '../sources/data/locations.json';
 
 var locations = dataLoad.locations;
 
+for (var i=0; i < locations.length; i++) {
+    $("#switches").append("<li class='switch' x='" + locations[i].x + "' y='" + locations[i].y + "'>" + locations[i].name + "</li>");
+}
+
 
 //leaflet map stuff
 L.Map.addInitHook('addHandler', 'cursor', L.CursorHandler);
@@ -273,9 +277,9 @@ var sidebar = L.control.sidebar('sidebar', {
 
 
 //navigation buttons
-$("#navigation").on("click", function(){
-    zoomTo(-17.10706, 114.23438, 7);
-});
+// $("#navigation").on("click", function(){
+//     zoomTo(-17.10706, 114.23438, 7);
+// });
 
 $("#reset").on("click", function(){
     map.setView([0, 0], 3);
@@ -292,6 +296,13 @@ $("#out").on("click", function(){
 $("#add").on("click", function(){
     sidebar.toggle();
 });
+
+$(".switch").on("click", function(){
+    var thisSwitch = $(this);
+    console.log(thisSwitch.text());
+    zoomTo(thisSwitch.attr('x'),thisSwitch.attr('y'), 7);
+});
+
 
 
 
