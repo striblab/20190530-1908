@@ -89,53 +89,61 @@ var map = L.map('image-map', {
 	popupAnchor:  [7.5,0] // point from which the popup should open relative to the iconAnchor
 });
 
+  var marker;
+
+  map.on('click', function (e) {
+    if (marker) {
+      map.removeLayer(marker);
+    }
+    marker = new L.Marker(e.latlng).addTo(map);
+  });
 // register locations on map
 // we should look into adding a marker on click so that people know what they're adding
   map.on('click', function(e) {
+
     var popLocation = e.latlng;
 
     $("#xC").attr("value",popLocation.lat);
     $("#yC").attr("value",popLocation.lng);
+    // var clickMarker = L.marker([popLocation.lat, popLocation.lng]).addTo(map);
 
   //form handling
-$.fn.serializeObject = function()
-{
-   var o = {};
-   var a = this.serializeArray();
-   $.each(a, function() {
-       if (o[this.name]) {
-           if (!o[this.name].push) {
-               o[this.name] = [o[this.name]];
-           }
-           o[this.name].push(this.value || '');
-       } else {
-           o[this.name] = this.value || '';
-       }
-   });
-   return o;
-};
+  $.fn.serializeObject = function()
+  {
+     var o = {};
+     var a = this.serializeArray();
+     $.each(a, function() {
+         if (o[this.name]) {
+             if (!o[this.name].push) {
+                 o[this.name] = [o[this.name]];
+             }
+             o[this.name].push(this.value || '');
+         } else {
+             o[this.name] = this.value || '';
+         }
+     });
+     return o;
+  };
 
-$('.submit-form').on('click', function(x) {
-    var thisThing = $(this).parent();
-  x.preventDefault();
-  var jqxhr = $.ajax({
-    url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
-    method: "GET",
-    dataType: "json",
-    data: thisThing.serializeObject()
+  $('.submit-form').on('click', function(x) {
+      var thisThing = $(this).parent();
+    x.preventDefault();
+    var jqxhr = $.ajax({
+      url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
+      method: "GET",
+      dataType: "json",
+      data: thisThing.serializeObject()
+    });
+
+    $("#nC").attr("value","");
+    $("#dC").attr("value","");
+    $("#nC").val("");
+    $("#dC").val("");
+    $("#xC").attr("value","");
+    $("#yC").attr("value","");
+
+    x.stopPropagation();
   });
-
-  var newMarker = new L.marker(e.latlng, {icon: greenIcon}).addTo(map);
-
-  $("#nC").attr("value","");
-  $("#dC").attr("value","");
-  $("#nC").val("");
-  $("#dC").val("");
-  $("#xC").attr("value","");
-  $("#yC").attr("value","");
-
-  x.stopPropagation();
-});
 
 });
 
