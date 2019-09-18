@@ -228,8 +228,6 @@ $("#add").on("click", function(){
 
 // POIs plus Map toggle control
 
-
-
 // var test1 = L.marker([-7.786376953, 137.9375], {icon: greenIcon})
 // var test2 = L.marker([-14.72387695, 64.5], {icon: greenIcon})
 // var test3 = L.marker([-16.90362549, 106.1328125], {icon: orangeIcon})
@@ -237,20 +235,30 @@ $("#add").on("click", function(){
 //
 // var testarray = [test1, test2, test3, test4];
 
+// extend the leaflet marker class to include both a name and a description
+L.Marker.Custom = L.Marker.extend({
+  options: {
+    name: '',
+    description: ''
+  }
+});
 
+// mass populate expert points onto photo
 var expert_points = [];
 for (var i = 0; i < locations.length; i++) {
   var x = locations[i].x;
   var y = locations[i].y;
-  expert_points.push(L.marker([x,y], {icon: greenIcon}));
+  var loc_name = locations[i].name;
+  var desc = locations[i].description;
+  expert_points.push(new L.Marker.Custom([x,y], {icon: greenIcon, name: loc_name, description: desc}));
 }
 
-var group1 = L.featureGroup(expert_points).on("click", function() {
-  console.log('hi!')
+var experts = L.featureGroup(expert_points).on("click", function(event) {
+  var source = event.sourceTarget;
+  console.log(source.options.name);
+  console.log(source.options.description);
 })
 .addTo(map);
-// var feature = L.FeatureGroup([group1])
-
 
 
 $("#experts").on("click", function() {
