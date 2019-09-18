@@ -35,7 +35,7 @@ ul.dropdown.months li {
   padding: 3px 4px;
 }
 
-.navbutton#add, .navbutton#reset, .navbutton#in, .navbutton#out {
+#buttons .navbutton#add, .navbutton#experts, .navbutton#readers, .navbutton#in, .navbutton#out {
   font-size: 14px;
   font-family: "Benton Sans", sans-serif;
   padding: 5px 10px;
@@ -44,7 +44,7 @@ ul.dropdown.months li {
   fill: none;
 }
 
-.navbutton#add:hover, .navbutton#reset:hover, .navbutton#in:hover, .navbutton#out:hover {
+#buttons .navbutton#add:hover, .navbutton#experts:hover, .navbutton#readers:hover,.navbutton#in:hover, .navbutton#out:hover {
   font-size: 14px;
   font-family: "Benton Sans", sans-serif;
   color: white;
@@ -57,8 +57,12 @@ ul.dropdown.months li {
 #buttons {
   display: block;
   margin: 0 auto;
-  width: 400px;
+  width: 230px;
   margin-bottom: 20px;
+}
+
+#viewSwitch #buttons h2#buttonHead {
+  margin-top: 10px;
 }
 
 #followUp {

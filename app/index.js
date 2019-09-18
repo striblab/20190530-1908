@@ -1,101 +1,12 @@
-/**
- * Main JS file for project.
- */
-
-/**
- * Define globals that are added through the js.globals in
- * the config.json file, here, mostly so linting won't get triggered
- * and its a good queue of what is available:
- */
-// /* global $, _ */
-
 // Dependencies
 import utils from './shared/utils.js';
 
 // Mark page with note about development or staging
 utils.environmentNoting();
 
-/**
- * Adding dependencies
- * ---------------------------------
- * Import local ES6 or CommonJS modules like this:
- * import utilsFn from './shared/utils.js';
- *
- * Or import libraries installed with npm like this:
- * import module from 'module';
- */
-
-
-/**
- * Adding Svelte templates in the client
- * ---------------------------------
- * We can bring in the same Svelte templates that we use
- * to render the HTML into the client for interactivity.  The key
- * part is that we need to have similar data.
- *
- * First, import the template.  This is the main one, and will
- * include any other templates used in the project.
- *
- *   `import Content from '../templates/_index-content.svelte.html';`
- *
- * Get the data parts that are needed.  There are two ways to do this.
- * If you are using the buildData function to get data, then add make
- * sure the config for your data has a `local: "content.json"` property
- *
- *  1. For smaller datasets, just import them like other files.
- *     `import content from '../assets/data/content.json';`
- *  2. For larger data points, utilize window.fetch.
- *     `let content = await (await window.fetch('../assets/data/content.json')).json();`
- *
- * Once you have your data, use it like a Svelte component:
- *
- * const app = new Content({
- *  target: document.querySelector('.article-lcd-body-content'),
- *  hydrate: true,
- *  data: {
- *    content
- *  }
- * });
- */
-
-
-
-// Common code to get svelte template loaded on the client and hack-ishly
-// handle sharing
-//
-// import Content from '../templates/_index-content.svelte.html
-//
-// $(document).ready(() => {
-//   // Hack to get share back
-//   let $share = $('.share-placeholder').size()
-//     ? $('.share-placeholder')
-//       .children()
-//       .detach()
-//     : undefined;
-//   let attachShare = !$share
-//     ? undefined
-//     : () => {
-//       $('.share-placeholder').append($share);
-//     };
-
-//   // Main component
-//   const app = new Content({
-//     target: document.querySelector('.article-lcd-body-content'),
-//     hydrate: true,
-//     data: {
-//       attachShare
-//     }
-//   });
-// });
-
 import dataLoad from '../sources/data/locations.json';
 
 var locations = dataLoad.locations;
-
-for (var i=0; i < locations.length; i++) {
-    $("#switches").append("<li class='switch' x='" + locations[i].x + "' y='" + locations[i].y + "'>" + locations[i].name + "</li>");
-}
-
 
 //leaflet map stuff
 L.Map.addInitHook('addHandler', 'cursor', L.CursorHandler);
@@ -141,16 +52,19 @@ L.control.loader = function(options) {
   return newControl;
 };
 
+// map options
 var map = L.map('image-map', {
     minZoom: 3,
     maxNativeZoom: 12,
     maxZoom: 4,
     center: [0, 0],
-    zoom: 3,
+    zoom: 6,
     cursor: true,
-    crs: L.CRS.Simple
+    crs: L.CRS.Simple,
+    zoomControl: false
   });
 
+//image options
   var w = 1460,
       h = 230,
       url = './assets/images/panorama_test3.jpg';
@@ -161,14 +75,7 @@ var map = L.map('image-map', {
 
   L.imageOverlay(url, bounds).addTo(map);
 
-  // var sidebar = L.Control.Sidebar('sidebar', {
-  //           closeButton: true,
-  //           position: 'left'
-  //       });
-  // map.addControl(sidebar);
-
-
-  // map.scrollWheelZoom.disable()
+  map.scrollWheelZoom.disable()
   map.setMaxBounds(bounds);
 
   var greenIcon = L.icon({
@@ -182,57 +89,61 @@ var map = L.map('image-map', {
 	popupAnchor:  [7.5,0] // point from which the popup should open relative to the iconAnchor
 });
 
+  var marker;
+
+  map.on('click', function (e) {
+    if (marker) {
+      map.removeLayer(marker);
+    }
+    marker = new L.Marker(e.latlng).addTo(map);
+  });
+// register locations on map
+// we should look into adding a marker on click so that people know what they're adding
   map.on('click', function(e) {
+
     var popLocation = e.latlng;
 
     $("#xC").attr("value",popLocation.lat);
     $("#yC").attr("value",popLocation.lng);
+    // var clickMarker = L.marker([popLocation.lat, popLocation.lng]).addTo(map);
 
+  //form handling
+  $.fn.serializeObject = function()
+  {
+     var o = {};
+     var a = this.serializeArray();
+     $.each(a, function() {
+         if (o[this.name]) {
+             if (!o[this.name].push) {
+                 o[this.name] = [o[this.name]];
+             }
+             o[this.name].push(this.value || '');
+         } else {
+             o[this.name] = this.value || '';
+         }
+     });
+     return o;
+  };
 
-    // var popup = L.popup()
-    // .setLatLng(popLocation)
-    // .setContent(form)
-    // .openOn(map);
+  $('.submit-form').on('click', function(x) {
+      var thisThing = $(this).parent();
+    x.preventDefault();
+    var jqxhr = $.ajax({
+      url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
+      method: "GET",
+      dataType: "json",
+      data: thisThing.serializeObject()
+    });
 
-    //form handling
-$.fn.serializeObject = function()
-{
-   var o = {};
-   var a = this.serializeArray();
-   $.each(a, function() {
-       if (o[this.name]) {
-           if (!o[this.name].push) {
-               o[this.name] = [o[this.name]];
-           }
-           o[this.name].push(this.value || '');
-       } else {
-           o[this.name] = this.value || '';
-       }
-   });
-   return o;
-};
+    $("#nC").attr("value","");
+    $("#dC").attr("value","");
+    $("#nC").val("");
+    $("#dC").val("");
+    $("#xC").attr("value","");
+    $("#yC").attr("value","");
 
-$('.submit-form').on('click', function(x) {
-    var thisThing = $(this).parent();
-  x.preventDefault();
-  var jqxhr = $.ajax({
-    url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
-    method: "GET",
-    dataType: "json",
-    data: thisThing.serializeObject()
+    x.stopPropagation();
   });
-
-  var newMarker = new L.marker(e.latlng, {icon: greenIcon}).addTo(map);
-
-  $("#nC").attr("value","");
-  $("#dC").attr("value","");
-  $("#nC").val("");
-  $("#dC").val("");
-  $("#xC").attr("value","");
-  $("#yC").attr("value","");
-
-  x.stopPropagation();
-});
 
 });
 
@@ -242,69 +153,73 @@ function zoomTo(lat, long, zoom) {
     map.flyTo([lat, long], zoom);
 }
 
-var test = L.marker([-13.62, 76.37], {icon: greenIcon}).bindPopup('this is a test').addTo(map);
-var test2 = L.marker([-20.876953125, 157.75], {icon: greenIcon}).bindPopup('this is another test').addTo(map);
-
 var sidebar = L.control.sidebar('sidebar', {
             closeButton: true,
             position: 'left'
         });
         map.addControl(sidebar);
 
-        // setTimeout(function () {
-        //     sidebar.show();
-        // }, 500);
+var miniMapOptions = {
+  crs: L.CRS.Simple,
+  minZoom: 2,
+  maxZoom: 4,
+  maxBoundsViscosity: 1.0
+}
 
-        // sidebar.on('show', function () {
-        //     console.log('Sidebar will be visible.');
-        // });
-        //
-        // sidebar.on('shown', function () {
-        //     console.log('Sidebar is visible.');
-        // });
-        //
-        // sidebar.on('hide', function () {
-        //     console.log('Sidebar will be hidden.');
-        // });
-        //
-        // sidebar.on('hidden', function () {
-        //     console.log('Sidebar is hidden.');
-        // });
+var mmLayer = L.imageOverlay(url, bounds)
 
-        L.DomEvent.on(sidebar.getCloseButton(), 'click', function () {
-            console.log('Close button clicked.');
-        });
+var miniMap = new L.Control.MiniMap(mmLayer, {
+  width: 500,
+  height: 100,
+  mapOptions: miniMapOptions
+}).addTo(map);
 
+var zoom = new L.control.zoom({
+  position:'bottomright'
+}).addTo(map);
 
 //navigation buttons
 // $("#navigation").on("click", function(){
 //     zoomTo(-17.10706, 114.23438, 7);
 // });
-
-$("#reset").on("click", function(){
-    map.setView([0, 0], 3);
-});
-
-$("#in").on("click", function(){
-    map.setZoom(map.getZoom() + 1);
-});
-
-$("#out").on("click", function(){
-    map.setZoom(map.getZoom() - 1);
-});
-
+//
+// $("#reset").on("click", function(){
+//     map.setView([0, 0], 3);
+// });
+//
+// $("#in").on("click", function(){
+//     map.setZoom(map.getZoom() + 1);
+// });
+//
+// $("#out").on("click", function(){
+//     map.setZoom(map.getZoom() - 1);
+// });
+//
 $("#add").on("click", function(){
     sidebar.toggle();
 });
 
-$(".switch").on("click", function(){
-    var thisSwitch = $(this);
-    console.log(thisSwitch.text());
-    zoomTo(thisSwitch.attr('x'),thisSwitch.attr('y'), 7);
+// POIs plus Map toggle control
+
+var test1 = L.marker([-7.786376953, 137.9375]).bindPopup('Test 1')
+var test2 = L.marker([-14.72387695, 64.5]).bindPopup('test 2')
+var test3 = L.marker([-16.90362549, 106.1328125]).bindPopup('test 3')
+var test4 = L.marker([-16.83068848, 34.234375]).bindPopup('test 4')
+
+const group1 = L.layerGroup([test1, test2]);
+const group2 = L.layerGroup([test3, test4]);
+
+group1.addTo(map);
+
+$("#experts").on("click", function() {
+  map.removeLayer(group2);
+  group1.addTo(map);
 });
 
-
-
+$("#readers").on("click", function() {
+  map.removeLayer(group1);
+  group2.addTo(map);
+});
 
 function DropDown(el) {
     this.dd = el;
@@ -337,6 +252,20 @@ DropDown.prototype = {
         return this.index;
     }
 }
+
+$("#test-1").on("click", function() {
+  sidebar.hide();
+  map.flyTo([-7.786, 137.9375], 6);
+});
+
+$("#test-2").on("click", function() {
+  sidebar.hide();
+  map.flyTo([-14.72387695, 64.5], 6);
+});
+
+$("leaflet-marker-icon").on("click", function() {
+  sidebar.toggle();
+})
 
 $(function() {
 
