@@ -43,11 +43,11 @@
     window.Bugsnag = { use: function() { }};
     window.FeatureAPI_JS_TipsNavigation = false
   </script><!-- Shared styles --><link href="http://www.startribune.com/vendor/css/startribune.css?d=1557335304056" rel="stylesheet" type="text/css"><!-- Desktop assets -->
-    <link href="http://assets.startribune.com/static/css/screen.css?d=1568757715954" rel="stylesheet" type="text/css">
+    <link href="http://assets.startribune.com/static/css/screen.css?d=1568826471724" rel="stylesheet" type="text/css">
 
-    <script src="http://assets.startribune.com/static/vendor/jquery/dist/jquery.min.js?d=1568757715954"></script>
-    <script src="http://assets.startribune.com/static/min/header.min.js?d=1568757715954"></script>
-    <script src="http://assets.startribune.com/static/min/footer.min.js?d=1568757715954"></script><!-- Shared scripts --><script src="http://www.startribune.com/vendor/js/shims.js?d=1568757715954"></script><!-- <script src="http://www.startribune.com/vendor/js/bugsnag.js?d=1557335304056"></script> --><script src="http://www.startribune.com/vendor/js/startribune.js?d=1568757715954"></script>
+    <script src="http://assets.startribune.com/static/vendor/jquery/dist/jquery.min.js?d=1568826471724"></script>
+    <script src="http://assets.startribune.com/static/min/header.min.js?d=1568826471724"></script>
+    <script src="http://assets.startribune.com/static/min/footer.min.js?d=1568826471724"></script><!-- Shared scripts --><script src="http://www.startribune.com/vendor/js/shims.js?d=1568826471724"></script><!-- <script src="http://www.startribune.com/vendor/js/bugsnag.js?d=1557335304056"></script> --><script src="http://www.startribune.com/vendor/js/startribune.js?d=1568826471724"></script>
 
 		<style>
 			
@@ -146,11 +146,10 @@
           <a rel="author" href="http://www.startribune.com/eric-roper/62906482/">Eric Roper</a>,
           <a rel="author" href="http://www.startribune.com/jeff-hargarten/274254381/">Jeff Hargarten</a> and Thomas Oide
         </address>
-        <span class="spacer"></span>
-        Star Tribune
+
         <!-- <span class="spacer-alt"></span> -->
         <p></p>
-        <time pubdate datetime="2019-10-050T16:00:00">October 5, 2019</time>
+        Star Tribune <span class="spacer"></span><time pubdate datetime="2019-10-050T16:00:00"> October 5, 2019</time>
         <p></p>
         <!-- share -->
       </div>
@@ -166,18 +165,26 @@
     <div id="viewSwitch">
       <h2>Explore the photo</h2>
       <div class="subText">
-        <p>
-          <b>To pan:</b> Click and drag anywhere on the photo
-        </p>
-        <p>
-          <b>To zoom:</b> Use the plus/minus buttons at the bottom right
-        </p>
-        <p>
-          <b>To add:</b> Click anywhere on the map and fill out the form
-        </p>
-        <p>
-          <b>To read:</b> Click any of the dots on the photo
-        </p>
+        <div class="instructions">
+          <p>
+            <b>To pan:</b> Click and drag anywhere on the photo
+          </p>
+        </div>
+        <div class="instructions">
+          <p>
+            <b>To zoom:</b> Use the plus/minus buttons at the bottom right
+          </p>
+        </div>
+        <div class="instructions">
+          <p>
+            <b>To add:</b> Click anywhere on the photo and add a note
+          </p>
+        </div>
+        <div class="instructions">
+          <p>
+            <b>To read:</b> Click a marker and read the note
+          </p>
+        </div>
       </div>
       <div id="buttons">
         <h2 id="buttonHead">Choose a view</h2>
@@ -200,24 +207,24 @@
       </div>
       </div>
 
-      <div id="buttons">
-        <div class="navbutton" id="add">Add Feature</div>
+    <div id="sidebar">
+      <div id="form">
+        <h3>Sidebar Headline</h3>
+        <p>
+          Here's some sidebar text that explains what this form does. Blah blah blah blah blah blah.
+        </p>
+        <div>
+          <form id="test-form" autocomplete="off">
+              <input type="text" id="nC" name="name" placeholder="Feature name">
+              <input type="text" id="dC" name="description" placeholder="Description">
+              <input type="text" id="xC" name="x" value="0" placeholder="x coordinate">
+              <input type="text" id="yC" name="y" value="0" placeholder="y coordinate">
+              <button type="button" class="submit-form">Submit</button>
+              <button type="button" id="cancel">Cancel</button>
+          </form>
+        </div>
       </div>
 
-    <div id="sidebar">
-      <h3>Sidebar Headline</h3>
-      <p>
-        Here's some sidebar text that explains what this form does. Blah blah blah blah blah blah.
-      </p>
-      <div id="form">
-        <form id="test-form" autocomplete="off">
-            <input type="text" id="nC" name="name" placeholder="Feature name">
-            <input type="text" id="dC" name="description" placeholder="Description">
-            <input type="text" id="xC" name="x" value="0" placeholder="x coordinate">
-            <input type="text" id="yC" name="y" value="0" placeholder="y coordinate">
-            <button type="button" class="submit-form">Submit</button>
-        </form>
-      </div>
     </div>
 
     <div id="image-map">
