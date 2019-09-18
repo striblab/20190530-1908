@@ -96,11 +96,11 @@ ul.dropdown.months li {
     z-index: 1000;
 }
 
-button#cancel {
+button#cancel, button.cancel {
   background-color: #cf142b;
 }
 
-button#cancel:hover {
+button#cancel:hover, button.cancel:hover {
   background-color: #ad1111;
 }
 

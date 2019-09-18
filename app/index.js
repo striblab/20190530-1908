@@ -125,6 +125,9 @@ var map = L.map('image-map', {
     $("#xC").attr("value",popLocation.lat);
     $("#yC").attr("value",popLocation.lng);
 
+    $("#sidebarContent").attr('style', 'display:none');
+    $('#form').attr('style', 'display:block');
+
     if (marker) {
       map.removeLayer(marker);
     }
@@ -255,8 +258,13 @@ for (var i = 0; i < locations.length; i++) {
 
 var experts = L.featureGroup(expert_points).on("click", function(event) {
   var source = event.sourceTarget;
-  console.log(source.options.name);
-  console.log(source.options.description);
+  $("#form").attr('style', 'display:none');
+  $('#sidebarContent').attr('style', 'display:block');
+  $('#sidebarContent #locationName').append(source.options.name);
+  $('#sidebarContent #locationDesc').append(source.options.description);
+  $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
+  sidebar.show();
+
 })
 .addTo(map);
 
@@ -276,6 +284,10 @@ $("button#cancel").on("click", function() {
     map.removeLayer(marker);
     sidebar.hide();
   }
+});
+
+$('button.cancel').on('click', function() {
+  sidebar.hide();
 });
 
 function DropDown(el) {
