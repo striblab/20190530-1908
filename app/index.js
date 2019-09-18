@@ -228,12 +228,24 @@ $("#add").on("click", function(){
 
 // POIs plus Map toggle control
 
-var test1 = L.marker([-7.786376953, 137.9375], {icon: greenIcon})
-var test2 = L.marker([-14.72387695, 64.5], {icon: greenIcon})
-var test3 = L.marker([-16.90362549, 106.1328125], {icon: orangeIcon})
-var test4 = L.marker([-16.83068848, 34.234375], {icon: orangeIcon})
 
-var group1 = L.featureGroup([test1, test2, test3, test4]).on("click", function() {
+
+// var test1 = L.marker([-7.786376953, 137.9375], {icon: greenIcon})
+// var test2 = L.marker([-14.72387695, 64.5], {icon: greenIcon})
+// var test3 = L.marker([-16.90362549, 106.1328125], {icon: orangeIcon})
+// var test4 = L.marker([-16.83068848, 34.234375], {icon: orangeIcon})
+//
+// var testarray = [test1, test2, test3, test4];
+
+
+var expert_points = [];
+for (var i = 0; i < locations.length; i++) {
+  var x = locations[i].x;
+  var y = locations[i].y;
+  expert_points.push(L.marker([x,y], {icon: greenIcon}));
+}
+
+var group1 = L.featureGroup(expert_points).on("click", function() {
   console.log('hi!')
 })
 .addTo(map);
