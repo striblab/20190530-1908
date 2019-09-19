@@ -242,7 +242,9 @@ $("#add").on("click", function(){
 L.Marker.Custom = L.Marker.extend({
   options: {
     name: '',
-    description: ''
+    description: '',
+    lat: 0,
+    long: 0
   }
 });
 
@@ -253,16 +255,26 @@ for (var i = 0; i < locations.length; i++) {
   var y = locations[i].y;
   var loc_name = locations[i].name;
   var desc = locations[i].description;
-  expert_points.push(new L.Marker.Custom([x,y], {icon: greenIcon, name: loc_name, description: desc}));
+  expert_points.push(new L.Marker.Custom([x,y], {icon: greenIcon, name: loc_name, description: desc, lat: x, long: y}));
 }
 
 var experts = L.featureGroup(expert_points).on("click", function(event) {
   var source = event.sourceTarget;
+
+  if (marker) {
+    map.removeLayer(marker);
+  }
+
   $("#form").attr('style', 'display:none');
   $('#sidebarContent').attr('style', 'display:block');
+  $('#sidebarContent #locationName').empty();
+  $('#sidebarContent #locationDesc').empty();
   $('#sidebarContent #locationName').append(source.options.name);
   $('#sidebarContent #locationDesc').append(source.options.description);
   $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
+
+
+  map.flyTo([source.options.lat, source.options.long], 6);
   sidebar.show();
 
 })
