@@ -78,34 +78,64 @@ var map = L.map('image-map', {
   map.scrollWheelZoom.disable()
   map.setMaxBounds(bounds);
 
+  // icon initialization
   var greenIcon = L.icon({
-	iconUrl: './assets/images/leaf-green.png',
-	shadowUrl: './assets/images/leaf-shadow.png',
+	   iconUrl: './assets/images/1x/green.png',
+	   shadowUrl: './assets/images/1x/shadow.png',
 
-	iconSize:     [15, 15], // size of the icon
-	shadowSize:   [1, 1], // size of the shadow
-	iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
-	shadowAnchor: [0, 0],  // the same for the shadow
-	popupAnchor:  [7.5,0] // point from which the popup should open relative to the iconAnchor
-});
+	   iconSize:     [10, 10], // size of the icon
+	   shadowSize:   [1, 1], // size of the shadow
+     iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+	   shadowAnchor: [0, 0],  // the same for the shadow
+	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
+  });
+
+  var orangeIcon = L.icon({
+	   iconUrl: './assets/images/1x/orange.png',
+	   shadowUrl: './assets/images/1x/shadow.png',
+
+	   iconSize:     [10, 10], // size of the icon
+	   shadowSize:   [1, 1], // size of the shadow
+     iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+	   shadowAnchor: [0, 0],  // the same for the shadow
+	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
+  });
+
+  var blueIcon = L.icon({
+	   iconUrl: './assets/images/1x/blue.png',
+	   shadowUrl: './assets/images/1x/shadow.png',
+
+	   iconSize:     [10, 10], // size of the icon
+	   shadowSize:   [1, 1], // size of the shadow
+     iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+	   shadowAnchor: [0, 0],  // the same for the shadow
+	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
+  });
 
   var marker;
 
-  map.on('click', function (e) {
-    if (marker) {
-      map.removeLayer(marker);
-    }
-    marker = new L.Marker(e.latlng).addTo(map);
-  });
 // register locations on map
 // we should look into adding a marker on click so that people know what they're adding
   map.on('click', function(e) {
+
+
 
     var popLocation = e.latlng;
 
     $("#xC").attr("value",popLocation.lat);
     $("#yC").attr("value",popLocation.lng);
-    // var clickMarker = L.marker([popLocation.lat, popLocation.lng]).addTo(map);
+
+    $("#sidebarContent").attr('style', 'display:none');
+    $('#form').attr('style', 'display:block');
+
+    if (marker) {
+      map.removeLayer(marker);
+    }
+    marker = new L.Marker(e.latlng, {icon: blueIcon}).addTo(map);
+
+    sidebar.show();
+    $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
+
 
   //form handling
   $.fn.serializeObject = function()
@@ -201,15 +231,55 @@ $("#add").on("click", function(){
 
 // POIs plus Map toggle control
 
-var test1 = L.marker([-7.786376953, 137.9375]).bindPopup('Test 1')
-var test2 = L.marker([-14.72387695, 64.5]).bindPopup('test 2')
-var test3 = L.marker([-16.90362549, 106.1328125]).bindPopup('test 3')
-var test4 = L.marker([-16.83068848, 34.234375]).bindPopup('test 4')
+// var test1 = L.marker([-7.786376953, 137.9375], {icon: greenIcon})
+// var test2 = L.marker([-14.72387695, 64.5], {icon: greenIcon})
+// var test3 = L.marker([-16.90362549, 106.1328125], {icon: orangeIcon})
+// var test4 = L.marker([-16.83068848, 34.234375], {icon: orangeIcon})
+//
+// var testarray = [test1, test2, test3, test4];
 
-const group1 = L.layerGroup([test1, test2]);
-const group2 = L.layerGroup([test3, test4]);
+// extend the leaflet marker class to include both a name and a description
+L.Marker.Custom = L.Marker.extend({
+  options: {
+    name: '',
+    description: '',
+    lat: 0,
+    long: 0
+  }
+});
 
-group1.addTo(map);
+// mass populate expert points onto photo
+var expert_points = [];
+for (var i = 0; i < locations.length; i++) {
+  var x = locations[i].x;
+  var y = locations[i].y;
+  var loc_name = locations[i].name;
+  var desc = locations[i].description;
+  expert_points.push(new L.Marker.Custom([x,y], {icon: greenIcon, name: loc_name, description: desc, lat: x, long: y}));
+}
+
+var experts = L.featureGroup(expert_points).on("click", function(event) {
+  var source = event.sourceTarget;
+
+  if (marker) {
+    map.removeLayer(marker);
+  }
+
+  $("#form").attr('style', 'display:none');
+  $('#sidebarContent').attr('style', 'display:block');
+  $('#sidebarContent #locationName').empty();
+  $('#sidebarContent #locationDesc').empty();
+  $('#sidebarContent #locationName').append(source.options.name);
+  $('#sidebarContent #locationDesc').append(source.options.description);
+  $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
+
+
+  map.flyTo([source.options.lat, source.options.long], 6);
+  sidebar.show();
+
+})
+.addTo(map);
+
 
 $("#experts").on("click", function() {
   map.removeLayer(group2);
@@ -219,6 +289,17 @@ $("#experts").on("click", function() {
 $("#readers").on("click", function() {
   map.removeLayer(group1);
   group2.addTo(map);
+});
+
+$("button#cancel").on("click", function() {
+  if (marker) {
+    map.removeLayer(marker);
+    sidebar.hide();
+  }
+});
+
+$('button.cancel').on('click', function() {
+  sidebar.hide();
 });
 
 function DropDown(el) {
