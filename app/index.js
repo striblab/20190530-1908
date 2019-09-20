@@ -54,11 +54,11 @@ L.control.loader = function(options) {
 
 // map options
 var map = L.map('image-map', {
-    minZoom: 3,
+    minZoom: 4,
     maxNativeZoom: 12,
     maxZoom: 4,
     center: [0, 0],
-    zoom: 6,
+    zoom: 7,
     cursor: true,
     crs: L.CRS.Simple,
     zoomControl: false

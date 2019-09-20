@@ -22,7 +22,7 @@
 }
 
 #viewSwitch h2 {
-  margin-top: 65px;
+  margin-top: 25px;
 }
 
 #viewSwitch .subText p {
@@ -118,4 +118,71 @@ button#cancel:hover, button.cancel:hover {
     box-shadow: 0 1px 7px rgba(0, 0, 0, 0.65);
     -webkit-border-radius: 4px;
     border-radius: 4px;
+}
+
+#locationName {
+  font-family: "Benton Sans", sans-serif;
+  font-weight: bold;
+}
+
+#locationDesc {
+  font-family: "Benton Sans", sans-serif;
+  font-size: 16px;
+}
+
+.byline .spacer::after {
+  content: ' ';
+}
+
+.byline .spacer {
+  color: #959595;
+}
+
+.byline span.byline-2 {
+  color: #959595;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+#instructions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#instructions .instructions {
+  width: 150px;
+  font-family: "Benton Sans", sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+#instructions .instructions p {
+  font-family: "Benton Sans", sans-serif;
+  margin-left: 50px;
+}
+
+#instructions .instructions img {
+  float: left;
+  object-fit: contain;
+  align-self: flex-start;
+  width: 40px;
+  height: 40px;
+}
+
+.leaflet-right.leaflet-bottom .leaflet-control-minimap{
+  margin-right: 0;
+  margin-bottom: 0;
+  border-top: solid 6px white;
+  border-left: solid 6px white;
+  border-right: solid 2px white;
+  border-bottom: solid 2px white;
+}
+
+#image-map a img {
+  width: 50px;
+  height: 50px;
+  z-index: 100;
 }

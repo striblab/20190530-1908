@@ -43,11 +43,11 @@
     window.Bugsnag = { use: function() { }};
     window.FeatureAPI_JS_TipsNavigation = false
   </script><!-- Shared styles --><link href="http://www.startribune.com/vendor/css/startribune.css?d=1557335304056" rel="stylesheet" type="text/css"><!-- Desktop assets -->
-    <link href="http://assets.startribune.com/static/css/screen.css?d=1568990498054" rel="stylesheet" type="text/css">
+    <link href="http://assets.startribune.com/static/css/screen.css?d=1569004889434" rel="stylesheet" type="text/css">
 
-    <script src="http://assets.startribune.com/static/vendor/jquery/dist/jquery.min.js?d=1568990498054"></script>
-    <script src="http://assets.startribune.com/static/min/header.min.js?d=1568990498054"></script>
-    <script src="http://assets.startribune.com/static/min/footer.min.js?d=1568990498054"></script><!-- Shared scripts --><script src="http://www.startribune.com/vendor/js/shims.js?d=1568990498054"></script><!-- <script src="http://www.startribune.com/vendor/js/bugsnag.js?d=1557335304056"></script> --><script src="http://www.startribune.com/vendor/js/startribune.js?d=1568990498054"></script>
+    <script src="http://assets.startribune.com/static/vendor/jquery/dist/jquery.min.js?d=1569004889434"></script>
+    <script src="http://assets.startribune.com/static/min/header.min.js?d=1569004889434"></script>
+    <script src="http://assets.startribune.com/static/min/footer.min.js?d=1569004889434"></script><!-- Shared scripts --><script src="http://www.startribune.com/vendor/js/shims.js?d=1569004889434"></script><!-- <script src="http://www.startribune.com/vendor/js/bugsnag.js?d=1557335304056"></script> --><script src="http://www.startribune.com/vendor/js/startribune.js?d=1569004889434"></script>
 
 		<style>
 			
@@ -149,7 +149,7 @@
 
         <!-- <span class="spacer-alt"></span> -->
         <p></p>
-        Star Tribune <span class="spacer"></span><time pubdate datetime="2019-10-050T16:00:00"> October 5, 2019</time>
+        <span class="byline-2">Star Tribune</span> <span class="spacer"></span><time pubdate datetime="2019-10-050T16:00:00"> October 5, 2019</time>
         <p></p>
         <!-- share -->
       </div>
@@ -161,28 +161,34 @@
 
     <div id="viewSwitch">
       <h2>Explore the photo</h2>
-      <div class="subText">
-        <div class="instructions">
-          <p>
-            <b>To pan:</b> Click and drag anywhere on the photo
-          </p>
+      <div id="instructions">
+          <div class="instructions">
+            <img src="./assets/images/1x/blue.png">
+            <p>
+              <b>To pan:</b> Click and drag anywhere on the photo
+            </p>
+          </div>
+          <div class="instructions">
+            <img src="./assets/images/1x/blue.png">
+            <p>
+              <b>To zoom:</b> Use the plus-minus buttons at the bottom right
+            </p>
+          </div>
+          <div class="instructions">
+            <img src="./assets/images/1x/blue.png">
+            <p>
+              <b>To add:</b> Click anywhere on the photo and add a note
+            </p>
+          </div>
+          <div class="instructions">
+            <img src="./assets/images/1x/blue.png">
+            <p>
+              <b>To read:</b> Click a marker and read the note
+            </p>
+          </div>
         </div>
-        <div class="instructions">
-          <p>
-            <b>To zoom:</b> Use the plus/minus buttons at the bottom right
-          </p>
-        </div>
-        <div class="instructions">
-          <p>
-            <b>To add:</b> Click anywhere on the photo and add a note
-          </p>
-        </div>
-        <div class="instructions">
-          <p>
-            <b>To read:</b> Click a marker and read the note
-          </p>
-        </div>
-      </div>
+
+
       <!-- <div id="buttons">
         <h2 id="buttonHead">Choose a view</h2>
         <div class="navbutton" id="experts">Expert POIs</div>
@@ -229,8 +235,8 @@
     </div>
 
     <div id="image-map">
-      <!-- <div class="navbutton" id="in">Zoom In</div>
-      <div class="navbutton" id="out">Zoom Out</div> -->
+      <a id="in"><img src="./assets/images/1x/in.svg"></a>
+      <a id="out"><img src="./assets/images/1x/out.svg"></a>
     </div>
 
     <div id="followUp">
