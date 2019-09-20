@@ -83,9 +83,9 @@ var map = L.map('image-map', {
 	   iconUrl: './assets/images/1x/green.png',
 	   shadowUrl: './assets/images/1x/shadow.png',
 
-	   iconSize:     [10, 10], // size of the icon
+	   iconSize:     [25, 25], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+     iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
@@ -94,7 +94,7 @@ var map = L.map('image-map', {
 	   iconUrl: './assets/images/1x/orange.png',
 	   shadowUrl: './assets/images/1x/shadow.png',
 
-	   iconSize:     [10, 10], // size of the icon
+	   iconSize:     [25, 25], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
      iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
@@ -105,20 +105,34 @@ var map = L.map('image-map', {
 	   iconUrl: './assets/images/1x/blue.png',
 	   shadowUrl: './assets/images/1x/shadow.png',
 
-	   iconSize:     [10, 10], // size of the icon
+	   iconSize:     [25, 25], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+     iconAnchor:   [12.5, 25], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
 
   var marker;
 
+  map.on('mouseover', function() {
+    $('#image-map').css('cursor', 'url(./assets/images/1x/smallblue.png) 12.5 25, auto')
+  });
+
+  map.on('drag', function() {
+    $('#image-map').css('cursor', 'move')
+  });
+
+  map.on('mousedown', function() {
+    $('#image-map').css('cursor', 'url(./assets/images/1x/plus.png) 12.5 25, auto')
+  });
+
+  map.on('mouseup', function() {
+    $('#image-map').css('cursor', 'url(./assets/images/1x/smallblue.png) 12.5 25, auto')
+  });
+
 // register locations on map
 // we should look into adding a marker on click so that people know what they're adding
   map.on('click', function(e) {
-
-
 
     var popLocation = e.latlng;
 
@@ -272,7 +286,6 @@ var experts = L.featureGroup(expert_points).on("click", function(event) {
   $('#sidebarContent #locationName').append(source.options.name);
   $('#sidebarContent #locationDesc').append(source.options.description);
   $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
-
 
   map.flyTo([source.options.lat, source.options.long], 6);
   sidebar.show();

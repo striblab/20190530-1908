@@ -1,23 +1,141 @@
-{"locations":[{"name":"International Exposition Building","description":"BLURB","x":-7.786376953,"y":137.9375},
-{"name":"Metropolitan Opera house","description":"BLURB","x":-14.72387695,"y":64.5},
-{"name":"I am for men","description":"BLURB","x":-16.90362549,"y":106.1328125},
-{"name":"Short-lived First National Bank","description":"BLURB","x":-16.83068848,"y":34.234375},
-{"name":"Panorama Building","description":"BLURB","x":-13.91662598,"y":36.0390625},
-{"name":"Horse rear ends","description":"BLURB","x":-13.93487549,"y":133.7929688},
-{"name":"Immaculate Conception Church","description":"BLURB","x":-8.924438477,"y":67.8828125},
-{"name":"Non-existent suburbs","description":"BLURB","x":-5.541625977,"y":131.640625},
-{"name":"Nicollet Island packed with buildings","description":"BLURB","x":-9.776000977,"y":122.625},
-{"name":"Metropolitan Building Roof Garden","description":"BLURB","x":-8.115625381,"y":50.46860243},
-{"name":"Donaldson's","description":"BLURB","x":-13.37031269,"y":12.76796252},
-{"name":"Burlington Northern ad","description":"BLURB","x":-18.36796856,"y":6.946482738},
-{"name":"Holmes Hotel","description":"BLURB","x":-8.874218464,"y":24.59407761},
-{"name":"Theater Posters","description":"BLURB","x":-9.4296875,"y":22.62670297},
-{"name":"Electrical Wires","description":"BLURB","x":-27.2421875,"y":5.906692713},
-{"name":"Anna Held Cigars","description":"BLURB","x":-11.39609385,"y":116.5467584},
-{"name":"Corn Exchange","description":"BLURB","x":-26.453125,"y":144.7803941},
-{"name":"Vet & Stable","description":"BLURB","x":-25.8695011,"y":97.96069786},
-{"name":"Rothschild construction","description":"BLURB","x":-16.83791159,"y":54.03942196},
-{"name":"Palace Statue","description":"Blurb","x":-13.57228649,"y":58.82736269},
-{"name":"Youman Hotel","description":"BLURB","x":-24.95775164,"y":16.28049389},
-{"name":"The man behind the prophecy","description":"BLURB","x":-12.74673462,"y":98.68945313},
-{"name":"Old City Hall","description":"BLURB","x":-10.64712524,"y":92.50195313}]}
+{
+  "locations": [{
+      "name": "International Exposition Building",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -7.786376953,
+      "y": 137.9375
+    },
+    {
+      "name": "Metropolitan Opera house",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -14.72387695,
+      "y": 64.5
+    },
+    {
+      "name": "I am for men",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -16.90362549,
+      "y": 106.1328125
+    },
+    {
+      "name": "Short-lived First National Bank",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -16.83068848,
+      "y": 34.234375
+    },
+    {
+      "name": "Panorama Building",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -13.91662598,
+      "y": 36.0390625
+    },
+    {
+      "name": "Horse rear ends",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -13.93487549,
+      "y": 133.7929688
+    },
+    {
+      "name": "Immaculate Conception Church",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -8.924438477,
+      "y": 67.8828125
+    },
+    {
+      "name": "Non-existent suburbs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -5.541625977,
+      "y": 131.640625
+    },
+    {
+      "name": "Nicollet Island packed with buildings",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -9.776000977,
+      "y": 122.625
+    },
+    {
+      "name": "Metropolitan Building Roof Garden",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -8.115625381,
+      "y": 50.46860243
+    },
+    {
+      "name": "Donaldson's",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -13.37031269,
+      "y": 12.76796252
+    },
+    {
+      "name": "Burlington Northern ad",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -18.36796856,
+      "y": 6.946482738
+    },
+    {
+      "name": "Holmes Hotel",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -8.874218464,
+      "y": 24.59407761
+    },
+    {
+      "name": "Theater Posters",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -9.4296875,
+      "y": 22.62670297
+    },
+    {
+      "name": "Electrical Wires",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -27.2421875,
+      "y": 5.906692713
+    },
+    {
+      "name": "Anna Held Cigars",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -11.39609385,
+      "y": 116.5467584
+    },
+    {
+      "name": "Corn Exchange",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -26.453125,
+      "y": 144.7803941
+    },
+    {
+      "name": "Vet & Stable",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -25.8695011,
+      "y": 97.96069786
+    },
+    {
+      "name": "Rothschild construction",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -16.83791159,
+      "y": 54.03942196
+    },
+    {
+      "name": "Palace Statue",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -13.57228649,
+      "y": 58.82736269
+    },
+    {
+      "name": "Youman Hotel",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -24.95775164,
+      "y": 16.28049389
+    },
+    {
+      "name": "The man behind the prophecy",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -12.74673462,
+      "y": 98.68945313
+    },
+    {
+      "name": "Old City Hall",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "x": -10.64712524,
+      "y": 92.50195313
+    }
+  ]
+}

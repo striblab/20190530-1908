@@ -31,13 +31,16 @@
 	height:500px;
 	background-color: #ffffff;
 	border:1px solid #333333;
-	cursor: crosshair;
   margin: 0 10px;
 }
 
-#image-map:hover {
-	cursor: crosshair;
-}
+// #image-map:active {
+// 	cursor: move !important;
+// }
+//
+// #image-map:hover {
+//   cursor: url(./assets/images/1x/blue.png), auto !important;
+// }
 
 
  #nav {
