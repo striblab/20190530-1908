@@ -26,7 +26,7 @@
 // }
 
 #instructions {
-  margin-top: 35px;
+  margin-top: 90px;
 }
 
 #viewSwitch .subText p {
@@ -43,17 +43,17 @@ ul.dropdown.months li {
   font-size: 14px;
   font-family: "Benton Sans", sans-serif;
   padding: 5px 10px;
-  border: solid 1px black;
+  // border: solid 1px black;
   border-top: none;
+  background-color: lightgrey;
 }
 
 .navbutton#in:hover, .navbutton#out:hover {
   font-size: 14px;
   font-family: "Benton Sans", sans-serif;
   padding: 5px 10px;
-  border: solid 1px black;
   border-top: none;
-  background-color: lightgrey;
+  opacity: 0.8;
 }
 
 #buttons {
@@ -66,7 +66,7 @@ ul.dropdown.months li {
 }
 
 #followUp {
-  margin-top: 35px;
+  margin-top: 90px;
 }
 
 #flexContainer {
@@ -96,12 +96,23 @@ ul.dropdown.months li {
     z-index: 1000;
 }
 
+button.submit-form {
+  background-color: #bebebe;
+}
+
+button.submit-form:hover {
+  background-color: #a9a9a9;
+}
+
 button#cancel, button.cancel {
-  background-color: #cf142b;
+  border: solid 1.5px #bebebe;
+  color: #bebebe;
+  background-color: #ffffff;
 }
 
 button#cancel:hover, button.cancel:hover {
-  background-color: #ad1111;
+  background-color: #bebebe;
+  color: white;
 }
 
 .leaflet-sidebar > .leaflet-control {
@@ -165,6 +176,14 @@ button#cancel:hover, button.cancel:hover {
   align-items: center;
 }
 
+#instructions .instructions:nth-of-type(1) {
+  width: 90px;
+  font-family: "Benton Sans", sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
 #instructions .instructions p {
   font-family: "Benton Sans", sans-serif;
   margin-left: 50px;
@@ -193,7 +212,6 @@ button#cancel:hover, button.cancel:hover {
 #completeForm button {
   display: block;
   margin: 0 auto;
-  margin-top: 100px;
 }
 
 .leaflet-right.leaflet-bottom .leaflet-control-minimap{
@@ -230,7 +248,7 @@ button#cancel:hover, button.cancel:hover {
   display: block;
   text-align: center;
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   // overflow: hidden;
   // float: left;
   // clear: none;
@@ -240,40 +258,8 @@ button#cancel:hover, button.cancel:hover {
 //   display: inline-block;
 // }
 
-#toggle .toggleButton {
-  display: inline-block;
-  font-size: 14px;
-  font-family: "Benton Sans", sans-serif;
-  padding: 5px 10px;
-  border: solid 1px black;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 5px;
-}
-
-.toggleButton#all {
-  font-size: 14px;
-  font-family: "Benton Sans", sans-serif;
-  padding: 5px 10px;
-  border: solid 1px black;
-  background-color: lightgrey;
-  cursor: pointer;
-}
-
-.toggleButton#staff {
-
-}
-
-.toggleButton#readers:hover {
-  background-color: #ee6544;
-  color: white;
-  cursor: pointer;
-}
-
-.toggleButton#staff:hover {
-  background-color: #64bc46;
-  color: white;
-  cursor: pointer;
+input:not([type='submit']):not([type='reset']):not([type='button']):invalid {
+    border-color: black;
 }
 
 #toggle label {
@@ -281,7 +267,8 @@ button#cancel:hover, button.cancel:hover {
   margin-right: 5px;
   font-family: "Benton Sans", sans-serif;
   color: black;
-  font-size: 18px;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 [type="radio"]:checked,
@@ -305,8 +292,8 @@ button#cancel:hover, button.cancel:hover {
     position: absolute;
     left: 0;
     top: 0;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border: 1px solid #ddd;
     border-radius: 100%;
     background: #fff;
@@ -314,8 +301,8 @@ button#cancel:hover, button.cancel:hover {
 [type="radio"]:checked:nth-of-type(1) + label:after,
 [type="radio"]:not(:checked):nth-of-type(1) + label:after {
   content: '';
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: darkgrey;
   position: absolute;
   top: 4px;
@@ -327,12 +314,12 @@ button#cancel:hover, button.cancel:hover {
 [type="radio"]:checked:nth-of-type(2) + label:after,
 [type="radio"]:not(:checked):nth-of-type(2) + label:after {
   content: '';
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: #ee6544;
   position: absolute;
   top: 4px;
-  left: 4.25px;
+  left: 4px;
   border-radius: 100%;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -340,8 +327,8 @@ button#cancel:hover, button.cancel:hover {
 [type="radio"]:checked:nth-of-type(3) + label:after,
 [type="radio"]:not(:checked):nth-of-type(3) + label:after {
   content: '';
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: #64bc46;
   position: absolute;
   top: 4px;

@@ -68,7 +68,7 @@ var map = L.map('image-map', {
 
 //image options
   var w = 1460,
-      h = 230,
+      h = 230.461,
       url = './assets/images/panorama_test3.jpg';
 
   var southWest = map.unproject([0, h], map.getMaxZoom()-1);
@@ -93,7 +93,7 @@ var map = L.map('image-map', {
   });
 
   var orangeIcon = L.icon({
-	   iconUrl: './assets/images/1x/orange.png',
+	   iconUrl: './assets/images/1x/reader.png',
 	   shadowUrl: './assets/images/1x/shadow.png',
 
 	   iconSize:     [25, 25], // size of the icon
@@ -103,13 +103,13 @@ var map = L.map('image-map', {
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
 
-  var blueIcon = L.icon({
-	   iconUrl: './assets/images/1x/blue.png',
+  var userMarker = L.icon({
+	   iconUrl: './assets/images/1x/smallorange.png',
 	   shadowUrl: './assets/images/1x/shadow.png',
 
-	   iconSize:     [25, 25], // size of the icon
+	   iconSize:     [40, 40], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [12.5, 25], // point of the icon which will correspond to marker's location
+     iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
@@ -117,7 +117,7 @@ var map = L.map('image-map', {
   var marker;
 
   map.on('mouseover', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/plus.png) 12.5 25, auto')
+    $('#image-map').css('cursor', 'url(./assets/images/1x/plusicon.png) 20 40, auto')
   });
 
   map.on('drag', function() {
@@ -125,11 +125,12 @@ var map = L.map('image-map', {
   });
 
   map.on('mousedown', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/smallblue.png) 12.5 25, auto')
+    $('#image-map').css('cursor', 'url(./assets/images/1x/smallorange.png) 20 40, auto')
   });
 
+
   map.on('mouseup', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/plus.png) 12.5 25, auto')
+    $('#image-map').css('cursor', 'url(./assets/images/1x/plusicon.png) 20 40, auto')
   });
 
   // map.on('mouseup', function() {
@@ -153,7 +154,7 @@ var map = L.map('image-map', {
     if (marker) {
       map.removeLayer(marker);
     }
-    marker = new L.Marker(e.latlng, {icon: blueIcon}).addTo(map);
+    marker = new L.Marker(e.latlng, {icon: userMarker}).addTo(map);
 
     sidebar.show();
     $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
@@ -335,6 +336,7 @@ $( "#test-form" ).submit(function( event ) {
     map.removeLayer(marker);
   }
 
+  var thisThing = $(this).parent();
   event.preventDefault();
   var jqxhr = $.ajax({
     url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
