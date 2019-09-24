@@ -273,6 +273,7 @@ var experts = L.featureGroup(expert_points).on("click", function(event) {
   }
 
   $("#form").attr('style', 'display:none');
+  $('#completeForm').attr('style', 'display:none');
   $('#sidebarContent').attr('style', 'display:block');
   $('#sidebarContent #locationName').empty();
   $('#sidebarContent #locationDesc').empty();
@@ -294,6 +295,7 @@ var readers = L.featureGroup(reader_points).on("click", function(event) {
   }
 
   $("#form").attr('style', 'display:none');
+  $('#completeForm').attr('style', 'display:none');
   $('#sidebarContent').attr('style', 'display:block');
   $('#sidebarContent #locationName').empty();
   $('#sidebarContent #locationDesc').empty();
