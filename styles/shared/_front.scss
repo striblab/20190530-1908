@@ -178,6 +178,24 @@ button#cancel:hover, button.cancel:hover {
   height: 40px;
 }
 
+#completeForm img {
+  width: 75px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+#completeForm p {
+  font-family: "Benton Sans", sans-serif;
+  font-size: 16px;
+}
+
+#completeForm button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
 .leaflet-right.leaflet-bottom .leaflet-control-minimap{
   margin-right: 0;
   margin-bottom: 0;
@@ -261,6 +279,9 @@ button#cancel:hover, button.cancel:hover {
 #toggle label {
   margin-left: 5px;
   margin-right: 5px;
+  font-family: "Benton Sans", sans-serif;
+  color: black;
+  font-size: 18px;
 }
 
 [type="radio"]:checked,
@@ -289,19 +310,6 @@ button#cancel:hover, button.cancel:hover {
     border: 1px solid #ddd;
     border-radius: 100%;
     background: #fff;
-}
-[type="radio"]:checked + label:after,
-[type="radio"]:not(:checked) + label:after {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background: black;
-    position: absolute;
-    top: 4px;
-    left: 4.25px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
 }
 [type="radio"]:checked:nth-of-type(1) + label:after,
 [type="radio"]:not(:checked):nth-of-type(1) + label:after {

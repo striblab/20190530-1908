@@ -132,6 +132,11 @@ var map = L.map('image-map', {
     $('#image-map').css('cursor', 'url(./assets/images/1x/plus.png) 12.5 25, auto')
   });
 
+  // map.on('mouseup', function() {
+  //   $('#image-map').css('cursor', 'auto')
+  // });
+
+
 // register locations on map
 // we should look into adding a marker on click so that people know what they're adding
   map.on('click', function(e) {
@@ -143,6 +148,7 @@ var map = L.map('image-map', {
 
     $("#sidebarContent").attr('style', 'display:none');
     $('#form').attr('style', 'display:block');
+    $('#completeForm').attr('style', 'display:none');
 
     if (marker) {
       map.removeLayer(marker);
@@ -171,25 +177,25 @@ var map = L.map('image-map', {
      return o;
   };
 
-  $('.submit-form').on('click', function(x) {
-      var thisThing = $(this).parent();
-    x.preventDefault();
-    var jqxhr = $.ajax({
-      url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
-      method: "GET",
-      dataType: "json",
-      data: thisThing.serializeObject()
-    });
-
-    $("#nC").attr("value","");
-    $("#dC").attr("value","");
-    $("#nC").val("");
-    $("#dC").val("");
-    $("#xC").attr("value","");
-    $("#yC").attr("value","");
-
-    x.stopPropagation();
-  });
+  // $('.submit-form').on('submit', function(x) {
+  //     var thisThing = $(this).parent();
+  //   x.preventDefault();
+  //   var jqxhr = $.ajax({
+  //     url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
+  //     method: "GET",
+  //     dataType: "json",
+  //     data: thisThing.serializeObject()
+  //   });
+  //
+  //   $("#nC").attr("value","");
+  //   $("#dC").attr("value","");
+  //   $("#nC").val("");
+  //   $("#dC").val("");
+  //   $("#xC").attr("value","");
+  //   $("#yC").attr("value","");
+  //
+  //   x.stopPropagation();
+  // });
 
 });
 
@@ -220,19 +226,6 @@ var miniMap = new L.Control.MiniMap(mmLayer, {
   mapOptions: miniMapOptions
 }).addTo(map);
 
-// var zoom = new L.control.zoom({
-//   position:'bottomright'
-// }).addTo(map);
-
-//navigation buttons
-// $("#navigation").on("click", function(){
-//     zoomTo(-17.10706, 114.23438, 7);
-// });
-//
-// $("#reset").on("click", function(){
-//     map.setView([0, 0], 3);
-// });
-//
 $("#buttons #in").on("click", function(){
     map.setZoom(map.getZoom() + 1);
 });
@@ -241,20 +234,6 @@ $("#buttons #out").on("click", function(){
     map.setZoom(map.getZoom() - 1);
 });
 
-// $("#add").on("click", function(){
-//     sidebar.toggle();
-// });
-
-// POIs plus Map toggle control
-
-// var test1 = L.marker([-7.786376953, 137.9375], {icon: greenIcon})
-// var test2 = L.marker([-14.72387695, 64.5], {icon: greenIcon})
-// var test3 = L.marker([-16.90362549, 106.1328125], {icon: orangeIcon})
-// var test4 = L.marker([-16.83068848, 34.234375], {icon: orangeIcon})
-//
-// var testarray = [test1, test2, test3, test4];
-
-// extend the leaflet marker class to include both a name and a description
 L.Marker.Custom = L.Marker.extend({
   options: {
     name: '',
@@ -327,6 +306,9 @@ var readers = L.featureGroup(reader_points).on("click", function(event) {
 })
 .addTo(map);
 
+
+// button functionality
+
 $("#experts").on("click", function() {
   map.removeLayer(group2);
   group1.addTo(map);
@@ -342,12 +324,62 @@ $("button#cancel").on("click", function() {
     map.removeLayer(marker);
     sidebar.hide();
     $(this).closest('form').find("input[type=text], textarea").val("");
+    // map.on('mouseover', function() {
+    //   $('#image-map').css('cursor', 'url(./assets/images/1x/plus.png) 12.5 25, auto')
+    // });
   }
+});
+
+$( "#test-form" ).submit(function( event ) {
+  if (marker) {
+    map.removeLayer(marker);
+  }
+
+  event.preventDefault();
+  var jqxhr = $.ajax({
+    url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
+    method: "GET",
+    dataType: "json",
+    data: thisThing.serializeObject()
+  });
+
+  $("#nC").attr("value","");
+  $("#dC").attr("value","");
+  $("#nC").val("");
+  $("#dC").val("");
+  $("#xC").attr("value","");
+  $("#yC").attr("value","");
+
+  event.stopPropagation();
+
+  $("#sidebarContent").attr('style', 'display:none');
+  $('#form').attr('style', 'display:none');
+  $('#completeForm').attr('style', 'display:block');
+
 });
 
 $('button.cancel').on('click', function() {
   sidebar.hide();
   map.flyTo([-15.783635053489071, 80.45312462904491], 4);
+});
+
+$('#all').on('click', function() {
+  map.removeLayer(readers);
+  map.removeLayer(experts);
+  map.addLayer(readers);
+  map.addLayer(experts);
+});
+
+$('#reader').on('click', function() {
+  map.removeLayer(readers);
+  map.removeLayer(experts);
+  map.addLayer(readers);
+});
+
+$('#staff').on('click', function() {
+  map.removeLayer(readers);
+  map.removeLayer(experts);
+  map.addLayer(experts);
 });
 
 function DropDown(el) {
