@@ -23,18 +23,19 @@
     </section>
 
     <div id="viewSwitch">
-      <h2>Explore the photo</h2>
+
       <div id="instructions">
+        <div class="instructions">
+          <!-- <img src="./assets/images/1x/blue.png"/>
+          <p>
+            <b>To zoom:</b> Use the plus-minus buttons at the bottom right
+          </p> -->
+          <h2>Explore the photo</h2>
+        </div>
           <div class="instructions">
             <img src="./assets/images/1x/blue.png"/>
             <p>
               <b>To pan:</b> Click and drag anywhere on the photo
-            </p>
-          </div>
-          <div class="instructions">
-            <img src="./assets/images/1x/blue.png"/>
-            <p>
-              <b>To zoom:</b> Use the plus-minus buttons at the bottom right
             </p>
           </div>
           <div class="instructions">
@@ -51,24 +52,36 @@
           </div>
         </div>
 
+        <div id="toggle">
+            <input type="radio" name="selector" id="all" value="all" checked />
+            <label for="all">
+              All points
+            </label>
 
-      <!-- <div id="buttons">
-        <h2 id="buttonHead">Choose a view</h2>
-        <div class="navbutton" id="experts">Expert POIs</div>
-        <div class="navbutton" id="readers">Reader POIs</div>
-      </div> -->
+            <input type="radio" name="selector" id="reader" value="reader" />
+            <label for="reader">
+              Reader picks
+            </label>
+
+            <input type="radio" name="selector" id="staff" value="staff" />
+            <label for="staff">
+              Staff picks
+            </label>
+
+          <!-- <div class="toggleButton" id="all">
+            All
+          </div>
+          <div class="toggleButton" id="staff">
+            Staff Picks
+          </div>
+          <div class="toggleButton" id="readers">
+            Reader Picks
+          </div> -->
+        </div>
+
       <div id="selector">
         <section class="main">
-              <div class="wrapper-demo">
-                <div id="dd" class="wrapper-dropdown-1" tabindex="1">
-                  <span class='thisone' id="selectText">Select a POI</span>
-                    <ul class="dropdown months" id="switches" tabindex="1">
-                      <li id="test-1">test</li>
-                      <li id="test-2">test 2</li>
-
-                    </ul>
-                </div>
-              ​</div>
+              <!-- <div class="wrapper-demo"></div> -->
       </section>
       </div>
       </div>
@@ -77,8 +90,8 @@
       <div id="form">
         <div>
           <form id="test-form" autocomplete="off">
-              <input type="text" id="nC" name="name" placeholder="What's this landmark called?"/>
-              <input type="text" id="dC" name="description" placeholder="What's your observation?" maxlength="150"/>
+              <input type="text" id="nC" name="name" placeholder="What's this landmark called?" required />
+              <input type="text" id="dC" name="description" placeholder="What's your observation?" maxlength="150" required />
               <input type="hidden" id="xC" name="x" value="0" placeholder="x coordinate">
               <input type="hidden" id="yC" name="y" value="0" placeholder="y coordinate">
               <button type="button" class="submit-form">Submit</button>
@@ -95,11 +108,29 @@
         <button type="button" class="cancel">Close</button>
       </div>
 
+      <div id="completeForm" style="display:none">
+        <img src="./assets/images/1x/check.svg"/>
+        <p>
+          Thank you for your input. Your submission will be screened before being added to the photo.
+        </p>
+        <button type="button" class="cancel">Close</button>
+      </div>
+
     </div>
 
     <div id="image-map">
-      <a id="in"><img src="./assets/images/1x/in.svg"/></a>
-      <a id="out"><img src="./assets/images/1x/out.svg"/></a>
+
+    </div>
+
+    <div id="buttons">
+      <div class="navbutton" id="in">
+        <img src="./assets/images/1x/zoom.png" alt="zoom in" />
+        Zoom In
+      </div>
+      <div class="navbutton" id="out">
+        <img src="./assets/images/1x/zoomout.png" alt="zoom out"/>
+        Zoom Out
+      </div>
     </div>
 
     <div id="followUp">

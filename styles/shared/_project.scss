@@ -31,7 +31,7 @@
 	height:500px;
 	background-color: #ffffff;
 	border:1px solid #333333;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
 // #image-map:active {
@@ -42,14 +42,6 @@
 //   cursor: url(./assets/images/1x/blue.png), auto !important;
 // }
 
-
- #nav {
-	 text-align:center;
-	 position:absolute;
-	 top:0;
-	 left:0;
-	 z-index:999;
- }
 
  #addnav {
 	text-align:center;
@@ -62,7 +54,6 @@
 
  .navbutton {
 	 display:inline-block;
-	 margin:5px;
 	 font-size:5em;
  }
 
@@ -205,12 +196,11 @@ p {
   }
 
   h2 {
-      font-size: 1.4em;
-      line-height: 1.4em;
-      text-align: center;
+      font-size: 1.2em;
+      text-align: left;
       font-family: 'Benton Sans';
       font-weight: bold;
-      margin-bottom: 20px;
+      padding: 0 0;
   }
 
   .rule {
