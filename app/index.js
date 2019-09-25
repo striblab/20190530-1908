@@ -295,7 +295,6 @@ var readers = L.featureGroup(reader_points).on("click", function(event) {
   }
 
   $("#form").attr('style', 'display:none');
-  $('#completeForm').attr('style', 'display:none');
   $('#sidebarContent').attr('style', 'display:block');
   $('#sidebarContent #locationName').empty();
   $('#sidebarContent #locationDesc').empty();
@@ -418,21 +417,9 @@ DropDown.prototype = {
     }
 }
 
-// $('.leaflet-bottom.leaflet-right').prepend('<div id="nav"><div id="in"><img src="./assets/images/1x/in.svg"/></div><div id="out"><img src="./assets/images/1x/out.svg"/></div></div>')
-
 $('#nav').on('mouseover', function() {
   $('#image-map').css('cursor', 'pointer')
 })
-
-$("#test-1").on("click", function() {
-  sidebar.hide();
-  map.flyTo([-7.786, 137.9375], 6);
-});
-
-$("#test-2").on("click", function() {
-  sidebar.hide();
-  map.flyTo([-14.72387695, 64.5], 6);
-});
 
 $("leaflet-marker-icon").on("click", function() {
   sidebar.toggle();
