@@ -43,11 +43,11 @@
     window.Bugsnag = { use: function() { }};
     window.FeatureAPI_JS_TipsNavigation = false
   </script><!-- Shared styles --><link href="http://www.startribune.com/vendor/css/startribune.css?d=1557335304056" rel="stylesheet" type="text/css"><!-- Desktop assets -->
-    <link href="http://assets.startribune.com/static/css/screen.css?d=1569438287809" rel="stylesheet" type="text/css">
+    <link href="http://assets.startribune.com/static/css/screen.css?d=1569446229239" rel="stylesheet" type="text/css">
 
-    <script src="http://assets.startribune.com/static/vendor/jquery/dist/jquery.min.js?d=1569438287809"></script>
-    <script src="http://assets.startribune.com/static/min/header.min.js?d=1569438287809"></script>
-    <script src="http://assets.startribune.com/static/min/footer.min.js?d=1569438287809"></script><!-- Shared scripts --><script src="http://www.startribune.com/vendor/js/shims.js?d=1569438287809"></script><!-- <script src="http://www.startribune.com/vendor/js/bugsnag.js?d=1557335304056"></script> --><script src="http://www.startribune.com/vendor/js/startribune.js?d=1569438287809"></script>
+    <script src="http://assets.startribune.com/static/vendor/jquery/dist/jquery.min.js?d=1569446229239"></script>
+    <script src="http://assets.startribune.com/static/min/header.min.js?d=1569446229239"></script>
+    <script src="http://assets.startribune.com/static/min/footer.min.js?d=1569446229239"></script><!-- Shared scripts --><script src="http://www.startribune.com/vendor/js/shims.js?d=1569446229239"></script><!-- <script src="http://www.startribune.com/vendor/js/bugsnag.js?d=1557335304056"></script> --><script src="http://www.startribune.com/vendor/js/startribune.js?d=1569446229239"></script>
 
 		<style>
 			
@@ -219,10 +219,10 @@
       <div id="form">
           <form id="test-form" autocomplete="off">
               <input type="text" id="nC" name="name" placeholder="Name your location" required>
-              <!-- <input type="text" id="dC" name="description" placeholder="What's your observation?" maxlength="150" required /> -->
-              <textarea name="description" rows="16" cols="50" maxlength="450" style="resize: none;" placeholder="Add a detail about your location (keep it to 50 words or less)" required></textarea>
+              <textarea name="description" id="dC" rows="16" cols="50" maxlength="450" style="resize: none;" placeholder="Add a detail about your location (keep it to 50 words or less)" required></textarea>
               <input type="hidden" id="xC" name="x" value="0" placeholder="x coordinate">
               <input type="hidden" id="yC" name="y" value="0" placeholder="y coordinate">
+              <input type="hidden" id="sY" name="show" value="N" placeholder="N">
               <button type="submit" class="submit-form">Submit</button>
               <button type="button" id="cancel">Cancel</button>
 

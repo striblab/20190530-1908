@@ -81,10 +81,10 @@
       <div id="form">
           <form id="test-form" autocomplete="off">
               <input type="text" id="nC" name="name" placeholder="Name your location" required>
-              <!-- <input type="text" id="dC" name="description" placeholder="What's your observation?" maxlength="150" required /> -->
-              <textarea name="description" rows="16" cols="50" maxlength="450" style="resize: none;" placeholder="Add a detail about your location (keep it to 50 words or less)" required></textarea>
+              <textarea name="description" id="dC" rows="16" cols="50" maxlength="450" style="resize: none;" placeholder="Add a detail about your location (keep it to 50 words or less)" required></textarea>
               <input type="hidden" id="xC" name="x" value="0" placeholder="x coordinate">
               <input type="hidden" id="yC" name="y" value="0" placeholder="y coordinate">
+              <input type="hidden" id="sY" name="show" value="N" placeholder="N">
               <button type="submit" class="submit-form">Submit</button>
               <button type="button" id="cancel">Cancel</button>
 
