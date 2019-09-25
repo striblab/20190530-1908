@@ -1,0 +1,280 @@
+{
+  "data": [
+  {
+    "name": "International Exposition Building",
+    "description": "BLURB",
+    "x2": -8.786376953,
+    "y2": 140.9375
+  },
+  {
+    "name": "Metropolitan Opera house",
+    "description": "BLURB",
+    "x2": -15.72387695,
+    "y2": 67.5
+  },
+  {
+    "name": "I am for men\" cigar ad",
+    "description": "BLURB",
+    "x2": -17.90362549,
+    "y2": 109.1328125
+  },
+  {
+    "name": "Short-lived First National Bank",
+    "description": "BLURB",
+    "x2": -17.83068848,
+    "y2": 37.234375
+  },
+  {
+    "name": "Panorama Building",
+    "description": "BLURB",
+    "x2": -14.91662598,
+    "y2": 39.0390625
+  },
+  {
+    "name": "Horse rear ends",
+    "description": "BLURB",
+    "x2": -14.93487549,
+    "y2": 136.7929688
+  },
+  {
+    "name": "Immaculate Conception Church",
+    "description": "BLURB",
+    "x2": -9.924438477,
+    "y2": 70.8828125
+  },
+  {
+    "name": "Non-existent suburbs",
+    "description": "BLURB",
+    "x2": -6.541625977,
+    "y2": 134.640625
+  },
+  {
+    "name": "Nicollet Island packed with buildings",
+    "description": "BLURB",
+    "x2": -10.77600098,
+    "y2": 125.625
+  },
+  {
+    "name": "Metropolitan Building Roof Garden",
+    "description": "BLURB",
+    "x2": -9.115625381,
+    "y2": 53.46860243
+  },
+  {
+    "name": "Donaldson's",
+    "description": "BLURB",
+    "x2": -14.37031269,
+    "y2": 15.76796252
+  },
+  {
+    "name": "Burlington Northern ad",
+    "description": "BLURB",
+    "x2": -19.36796856,
+    "y2": 9.946482738
+  },
+  {
+    "name": "Holmes Hotel",
+    "description": "BLURB",
+    "x2": -9.874218464,
+    "y2": 27.59407761
+  },
+  {
+    "name": "Theater Posters",
+    "description": "BLURB",
+    "x2": -10.4296875,
+    "y2": 25.62670297
+  },
+  {
+    "name": "Electrical Wires",
+    "description": "BLURB",
+    "x2": -28.2421875,
+    "y2": 8.906692713
+  },
+  {
+    "name": "Anna Held Cigars",
+    "description": "BLURB",
+    "x2": -12.39609385,
+    "y2": 119.5467584
+  },
+  {
+    "name": "Corn Exchange",
+    "description": "BLURB",
+    "x2": -27.453125,
+    "y2": 147.7803941
+  },
+  {
+    "name": "Vet & Stable",
+    "description": "BLURB",
+    "x2": -26.8695011,
+    "y2": 100.9606979
+  },
+  {
+    "name": "Rothschild construction",
+    "description": "BLURB",
+    "x2": -17.83791159,
+    "y2": 57.03942196
+  },
+  {
+    "name": "Palace Statue",
+    "description": "Blurb",
+    "x2": -14.57228649,
+    "y2": 61.82736269
+  },
+  {
+    "name": "Youman Hotel",
+    "description": "BLURB",
+    "x2": -25.95775164,
+    "y2": 19.28049389
+  },
+  {
+    "name": "The man behind the prophecy",
+    "description": "BLURB",
+    "x2": -13.74673462,
+    "y2": 101.6894531
+  },
+  {
+    "name": "Old City Hall",
+    "description": "BLURB",
+    "x2": -11.64712524,
+    "y2": 95.50195313
+  },
+  {
+    "name": "International Exposition Building",
+    "description": "BLURB",
+    "x2": -6.786376953,
+    "y2": 135.9375
+  },
+  {
+    "name": "Metropolitan Opera house",
+    "description": "BLURB",
+    "x2": -13.72387695,
+    "y2": 62.5
+  },
+  {
+    "name": "I am for men\" cigar ad",
+    "description": "BLURB",
+    "x2": -15.90362549,
+    "y2": 104.1328125
+  },
+  {
+    "name": "Short-lived First National Bank",
+    "description": "BLURB",
+    "x2": -15.83068848,
+    "y2": 32.234375
+  },
+  {
+    "name": "Panorama Building",
+    "description": "BLURB",
+    "x2": -12.91662598,
+    "y2": 34.0390625
+  },
+  {
+    "name": "Horse rear ends",
+    "description": "BLURB",
+    "x2": -12.93487549,
+    "y2": 131.7929688
+  },
+  {
+    "name": "Immaculate Conception Church",
+    "description": "BLURB",
+    "x2": -7.924438477,
+    "y2": 65.8828125
+  },
+  {
+    "name": "Non-existent suburbs",
+    "description": "BLURB",
+    "x2": -4.541625977,
+    "y2": 129.640625
+  },
+  {
+    "name": "Nicollet Island packed with buildings",
+    "description": "BLURB",
+    "x2": -8.776000977,
+    "y2": 120.625
+  },
+  {
+    "name": "Metropolitan Building Roof Garden",
+    "description": "BLURB",
+    "x2": -7.115625381,
+    "y2": 48.46860243
+  },
+  {
+    "name": "Donaldson's",
+    "description": "BLURB",
+    "x2": -12.37031269,
+    "y2": 10.76796252
+  },
+  {
+    "name": "Burlington Northern ad",
+    "description": "BLURB",
+    "x2": -17.36796856,
+    "y2": 4.946482738
+  },
+  {
+    "name": "Holmes Hotel",
+    "description": "BLURB",
+    "x2": -7.874218464,
+    "y2": 22.59407761
+  },
+  {
+    "name": "Theater Posters",
+    "description": "BLURB",
+    "x2": -8.4296875,
+    "y2": 20.62670297
+  },
+  {
+    "name": "Electrical Wires",
+    "description": "BLURB",
+    "x2": -26.2421875,
+    "y2": 3.906692713
+  },
+  {
+    "name": "Anna Held Cigars",
+    "description": "BLURB",
+    "x2": -10.39609385,
+    "y2": 114.5467584
+  },
+  {
+    "name": "Corn Exchange",
+    "description": "BLURB",
+    "x2": -25.453125,
+    "y2": 142.7803941
+  },
+  {
+    "name": "Vet & Stable",
+    "description": "BLURB",
+    "x2": -24.8695011,
+    "y2": 95.96069786
+  },
+  {
+    "name": "Rothschild construction",
+    "description": "BLURB",
+    "x2": -15.83791159,
+    "y2": 52.03942196
+  },
+  {
+    "name": "Palace Statue",
+    "description": "Blurb",
+    "x2": -12.57228649,
+    "y2": 56.82736269
+  },
+  {
+    "name": "Youman Hotel",
+    "description": "BLURB",
+    "x2": -23.95775164,
+    "y2": 14.28049389
+  },
+  {
+    "name": "The man behind the prophecy",
+    "description": "BLURB",
+    "x2": -11.74673462,
+    "y2": 96.68945313
+  },
+  {
+    "name": "Old City Hall",
+    "description": "BLURB",
+    "x2": -9.647125244,
+    "y2": 90.50195313
+  }
+]
+}

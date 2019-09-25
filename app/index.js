@@ -5,8 +5,12 @@ import utils from './shared/utils.js';
 utils.environmentNoting();
 
 import dataLoad from '../sources/data/locations.json';
+import test_data from '../sources/data/test_data.json';
 
 var locations = dataLoad.locations;
+var test = test_data.data;
+
+
 
 //leaflet map stuff
 L.Map.addInitHook('addHandler', 'cursor', L.CursorHandler);
@@ -54,11 +58,11 @@ L.control.loader = function(options) {
 
 // map options
 var map = L.map('image-map', {
-    minZoom: 3,
+    minZoom: 4,
     maxNativeZoom: 12,
     maxZoom: 4,
     center: [0, 0],
-    zoom: 6,
+    zoom: 7,
     cursor: true,
     crs: L.CRS.Simple,
     zoomControl: false
@@ -66,7 +70,7 @@ var map = L.map('image-map', {
 
 //image options
   var w = 1460,
-      h = 230,
+      h = 230.461,
       url = './assets/images/panorama_test3.jpg';
 
   var southWest = map.unproject([0, h], map.getMaxZoom()-1);
@@ -83,42 +87,62 @@ var map = L.map('image-map', {
 	   iconUrl: './assets/images/1x/green.png',
 	   shadowUrl: './assets/images/1x/shadow.png',
 
-	   iconSize:     [10, 10], // size of the icon
+	   iconSize:     [25, 25], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+     iconAnchor:   [12.5, 25], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
 
   var orangeIcon = L.icon({
-	   iconUrl: './assets/images/1x/orange.png',
+	   iconUrl: './assets/images/1x/reader.png',
 	   shadowUrl: './assets/images/1x/shadow.png',
 
-	   iconSize:     [10, 10], // size of the icon
+	   iconSize:     [25, 25], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+     iconAnchor:   [12.5, 25], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
 
-  var blueIcon = L.icon({
-	   iconUrl: './assets/images/1x/blue.png',
+  var userMarker = L.icon({
+	   iconUrl: './assets/images/1x/smallorange.png',
 	   shadowUrl: './assets/images/1x/shadow.png',
 
-	   iconSize:     [10, 10], // size of the icon
+	   iconSize:     [40, 40], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+     iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
 
   var marker;
 
+  map.on('mouseover', function() {
+    $('#image-map').css('cursor', 'url(./assets/images/1x/newmouse.png) 20 20, auto')
+  });
+
+  map.on('drag', function() {
+    $('#image-map').css('cursor', 'move')
+  });
+
+  map.on('mousedown', function() {
+    $('#image-map').css('cursor', 'url(./assets/images/1x/smallorange.png) 20 20, auto')
+  });
+
+
+  map.on('mouseup', function() {
+    $('#image-map').css('cursor', 'url(./assets/images/1x/newmouse.png) 20 20, auto')
+  });
+
+  // map.on('mouseup', function() {
+  //   $('#image-map').css('cursor', 'auto')
+  // });
+
+
 // register locations on map
 // we should look into adding a marker on click so that people know what they're adding
   map.on('click', function(e) {
-
-
 
     var popLocation = e.latlng;
 
@@ -127,53 +151,15 @@ var map = L.map('image-map', {
 
     $("#sidebarContent").attr('style', 'display:none');
     $('#form').attr('style', 'display:block');
+    $('#completeForm').attr('style', 'display:none');
 
     if (marker) {
       map.removeLayer(marker);
     }
-    marker = new L.Marker(e.latlng, {icon: blueIcon}).addTo(map);
+    marker = new L.Marker(e.latlng, {icon: userMarker}).addTo(map);
 
     sidebar.show();
     $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
-
-
-  //form handling
-  $.fn.serializeObject = function()
-  {
-     var o = {};
-     var a = this.serializeArray();
-     $.each(a, function() {
-         if (o[this.name]) {
-             if (!o[this.name].push) {
-                 o[this.name] = [o[this.name]];
-             }
-             o[this.name].push(this.value || '');
-         } else {
-             o[this.name] = this.value || '';
-         }
-     });
-     return o;
-  };
-
-  $('.submit-form').on('click', function(x) {
-      var thisThing = $(this).parent();
-    x.preventDefault();
-    var jqxhr = $.ajax({
-      url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
-      method: "GET",
-      dataType: "json",
-      data: thisThing.serializeObject()
-    });
-
-    $("#nC").attr("value","");
-    $("#dC").attr("value","");
-    $("#nC").val("");
-    $("#dC").val("");
-    $("#xC").attr("value","");
-    $("#yC").attr("value","");
-
-    x.stopPropagation();
-  });
 
 });
 
@@ -204,41 +190,14 @@ var miniMap = new L.Control.MiniMap(mmLayer, {
   mapOptions: miniMapOptions
 }).addTo(map);
 
-var zoom = new L.control.zoom({
-  position:'bottomright'
-}).addTo(map);
-
-//navigation buttons
-// $("#navigation").on("click", function(){
-//     zoomTo(-17.10706, 114.23438, 7);
-// });
-//
-// $("#reset").on("click", function(){
-//     map.setView([0, 0], 3);
-// });
-//
-// $("#in").on("click", function(){
-//     map.setZoom(map.getZoom() + 1);
-// });
-//
-// $("#out").on("click", function(){
-//     map.setZoom(map.getZoom() - 1);
-// });
-//
-$("#add").on("click", function(){
-    sidebar.toggle();
+$("#buttons #in").on("click", function(){
+    map.setZoom(map.getZoom() + 1);
 });
 
-// POIs plus Map toggle control
+$("#buttons #out").on("click", function(){
+    map.setZoom(map.getZoom() - 1);
+});
 
-// var test1 = L.marker([-7.786376953, 137.9375], {icon: greenIcon})
-// var test2 = L.marker([-14.72387695, 64.5], {icon: greenIcon})
-// var test3 = L.marker([-16.90362549, 106.1328125], {icon: orangeIcon})
-// var test4 = L.marker([-16.83068848, 34.234375], {icon: orangeIcon})
-//
-// var testarray = [test1, test2, test3, test4];
-
-// extend the leaflet marker class to include both a name and a description
 L.Marker.Custom = L.Marker.extend({
   options: {
     name: '',
@@ -258,6 +217,17 @@ for (var i = 0; i < locations.length; i++) {
   expert_points.push(new L.Marker.Custom([x,y], {icon: greenIcon, name: loc_name, description: desc, lat: x, long: y}));
 }
 
+// loop to create array of reader objects
+
+var reader_points = [];
+for (var i = 0; i < test.length; i++) {
+  var x = test[i].x2;
+  var y = test[i].y2;
+  var loc_name = test[i].name;
+  var desc = test[i].description;
+  reader_points.push(new L.Marker.Custom([x,y], {icon: orangeIcon, name: loc_name, description: desc, lat: x, long: y}));
+}
+
 var experts = L.featureGroup(expert_points).on("click", function(event) {
   var source = event.sourceTarget;
 
@@ -266,6 +236,7 @@ var experts = L.featureGroup(expert_points).on("click", function(event) {
   }
 
   $("#form").attr('style', 'display:none');
+  $('#completeForm').attr('style', 'display:none');
   $('#sidebarContent').attr('style', 'display:block');
   $('#sidebarContent #locationName').empty();
   $('#sidebarContent #locationDesc').empty();
@@ -273,13 +244,36 @@ var experts = L.featureGroup(expert_points).on("click", function(event) {
   $('#sidebarContent #locationDesc').append(source.options.description);
   $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
 
-
-  map.flyTo([source.options.lat, source.options.long], 6);
+  map.flyTo([source.options.lat, source.options.long], 7);
   sidebar.show();
 
 })
 .addTo(map);
 
+var readers = L.featureGroup(reader_points).on("click", function(event) {
+  var source = event.sourceTarget;
+
+  if (marker) {
+    map.removeLayer(marker);
+  }
+
+  $("#form").attr('style', 'display:none');
+  $('#completeForm').attr('style', 'display:none');
+  $('#sidebarContent').attr('style', 'display:block');
+  $('#sidebarContent #locationName').empty();
+  $('#sidebarContent #locationDesc').empty();
+  $('#sidebarContent #locationName').append(source.options.name);
+  $('#sidebarContent #locationDesc').append(source.options.description);
+  $('.strib-styles.ssa.ssb.ssc .leaflet-container a.close').attr('style', 'display:none');
+
+  map.flyTo([source.options.lat, source.options.long], 7);
+  sidebar.show();
+
+})
+.addTo(map);
+
+
+// button functionality
 
 $("#experts").on("click", function() {
   map.removeLayer(group2);
@@ -295,11 +289,88 @@ $("button#cancel").on("click", function() {
   if (marker) {
     map.removeLayer(marker);
     sidebar.hide();
+    $(this).closest('form').find("input[type=text], textarea").val("");
+    // map.on('mouseover', function() {
+    //   $('#image-map').css('cursor', 'url(./assets/images/1x/plus.png) 12.5 25, auto')
+    // });
   }
 });
 
+  //form handling
+  $.fn.serializeObject = function()
+  {
+     var o = {};
+     var a = this.serializeArray();
+     $.each(a, function() {
+         if (o[this.name]) {
+             if (!o[this.name].push) {
+                 o[this.name] = [o[this.name]];
+             }
+             o[this.name].push(this.value || '');
+         } else {
+             o[this.name] = this.value || '';
+         }
+     });
+     return o;
+  };
+
+  $('.submit-form').on('click', function(x) {
+
+    if (marker) {
+      map.removeLayer(marker);
+    }
+    
+      var thisThing = $(this).parent();
+
+      console.log(thisThing.serializeObject());
+
+    x.preventDefault();
+    var jqxhr = $.ajax({
+      url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
+      method: "GET",
+      dataType: "json",
+      data: thisThing.serializeObject()
+    })
+  
+    $("#nC").attr("value","");
+    $("#dC").attr("value","");
+    $("#nC").val("");
+    $("#dC").val("");
+    $("#xC").attr("value","");
+    $("#yC").attr("value","");
+  
+    x.stopPropagation();
+
+    $("#sidebarContent").attr('style', 'display:none');
+    $('#form').attr('style', 'display:none');
+    $('#completeForm').attr('style', 'display:block');
+  
+    $(this).closest('form').find("input[type=text], textarea").val("");
+  });
+
+
 $('button.cancel').on('click', function() {
   sidebar.hide();
+  map.flyTo([-15.783635053489071, 80.45312462904491], 4);
+});
+
+$('#all').on('click', function() {
+  map.removeLayer(readers);
+  map.removeLayer(experts);
+  map.addLayer(readers);
+  map.addLayer(experts);
+});
+
+$('#reader').on('click', function() {
+  map.removeLayer(readers);
+  map.removeLayer(experts);
+  map.addLayer(readers);
+});
+
+$('#staff').on('click', function() {
+  map.removeLayer(readers);
+  map.removeLayer(experts);
+  map.addLayer(experts);
 });
 
 function DropDown(el) {
@@ -334,15 +405,9 @@ DropDown.prototype = {
     }
 }
 
-$("#test-1").on("click", function() {
-  sidebar.hide();
-  map.flyTo([-7.786, 137.9375], 6);
-});
-
-$("#test-2").on("click", function() {
-  sidebar.hide();
-  map.flyTo([-14.72387695, 64.5], 6);
-});
+$('#nav').on('mouseover', function() {
+  $('#image-map').css('cursor', 'pointer')
+})
 
 $("leaflet-marker-icon").on("click", function() {
   sidebar.toggle();

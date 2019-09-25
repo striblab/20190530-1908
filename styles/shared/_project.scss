@@ -31,22 +31,17 @@
 	height:500px;
 	background-color: #ffffff;
 	border:1px solid #333333;
-	cursor: crosshair;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
-#image-map:hover {
-	cursor: crosshair;
-}
+// #image-map:active {
+// 	cursor: move !important;
+// }
+//
+// #image-map:hover {
+//   cursor: url(./assets/images/1x/blue.png), auto !important;
+// }
 
-
- #nav {
-	 text-align:center;
-	 position:absolute;
-	 top:0;
-	 left:0;
-	 z-index:999;
- }
 
  #addnav {
 	text-align:center;
@@ -59,7 +54,6 @@
 
  .navbutton {
 	 display:inline-block;
-	 margin:5px;
 	 font-size:5em;
  }
 
@@ -187,6 +181,10 @@ p {
       font-weight: normal;
   }
 
+  .byline p {
+    margin-bottom: 0.3em;
+  }
+
   section.body {
       padding-top: 20px;
       margin-bottom: 45px;
@@ -202,12 +200,12 @@ p {
   }
 
   h2 {
-      font-size: 1.4em;
-      line-height: 1.4em;
-      text-align: center;
+      font-size: 1em;
+      text-align: right;
       font-family: 'Benton Sans';
       font-weight: bold;
-      margin-bottom: 20px;
+      padding: 0 0;
+      margin-right: 10px;
   }
 
   .rule {
