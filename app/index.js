@@ -87,7 +87,7 @@ var map = L.map('image-map', {
 
 	   iconSize:     [25, 25], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+     iconAnchor:   [12.5, 25], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
@@ -98,7 +98,7 @@ var map = L.map('image-map', {
 
 	   iconSize:     [25, 25], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+     iconAnchor:   [12.5, 25], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
@@ -109,7 +109,7 @@ var map = L.map('image-map', {
 
 	   iconSize:     [40, 40], // size of the icon
 	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [20, 40], // point of the icon which will correspond to marker's location
+     iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
 	   shadowAnchor: [0, 0],  // the same for the shadow
 	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
   });
@@ -117,7 +117,7 @@ var map = L.map('image-map', {
   var marker;
 
   map.on('mouseover', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/plusicon.png) 20 40, auto')
+    $('#image-map').css('cursor', 'url(./assets/images/1x/newmouse.png) 20 20, auto')
   });
 
   map.on('drag', function() {
@@ -125,12 +125,12 @@ var map = L.map('image-map', {
   });
 
   map.on('mousedown', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/smallorange.png) 20 40, auto')
+    $('#image-map').css('cursor', 'url(./assets/images/1x/smallorange.png) 20 20, auto')
   });
 
 
   map.on('mouseup', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/plusicon.png) 20 40, auto')
+    $('#image-map').css('cursor', 'url(./assets/images/1x/newmouse.png) 20 20, auto')
   });
 
   // map.on('mouseup', function() {
@@ -295,6 +295,7 @@ var readers = L.featureGroup(reader_points).on("click", function(event) {
   }
 
   $("#form").attr('style', 'display:none');
+  $('#completeForm').attr('style', 'display:none');
   $('#sidebarContent').attr('style', 'display:block');
   $('#sidebarContent #locationName').empty();
   $('#sidebarContent #locationDesc').empty();
@@ -358,6 +359,8 @@ $( "#test-form" ).submit(function( event ) {
   $("#sidebarContent").attr('style', 'display:none');
   $('#form').attr('style', 'display:none');
   $('#completeForm').attr('style', 'display:block');
+
+  $(this).closest('form').find("input[type=text], textarea").val("");
 
 });
 

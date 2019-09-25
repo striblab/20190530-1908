@@ -46,6 +46,7 @@ ul.dropdown.months li {
   // border: solid 1px black;
   border-top: none;
   background-color: lightgrey;
+  color: #4a4a4a;
 }
 
 .navbutton#in:hover, .navbutton#out:hover {
@@ -98,21 +99,25 @@ ul.dropdown.months li {
 
 button.submit-form {
   background-color: #bebebe;
+  border-radius: 0;
 }
 
 button.submit-form:hover {
   background-color: #a9a9a9;
+  border-radius: 0;
 }
 
 button#cancel, button.cancel {
-  border: solid 1.5px #bebebe;
+  border: solid 1px #bebebe;
   color: #bebebe;
   background-color: #ffffff;
+  border-radius: 0;
 }
 
 button#cancel:hover, button.cancel:hover {
   background-color: #bebebe;
   color: white;
+  border-radius: 0;
 }
 
 .leaflet-sidebar > .leaflet-control {
@@ -137,12 +142,13 @@ button#cancel:hover, button.cancel:hover {
 
 #locationName {
   font-family: "Benton Sans", sans-serif;
+  font-size: 1.6em;
   font-weight: bold;
 }
 
 #locationDesc {
   font-family: "Benton Sans", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .byline .spacer::after {
@@ -197,8 +203,8 @@ button#cancel:hover, button.cancel:hover {
   float: left;
   object-fit: contain;
   align-self: flex-start;
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
 }
 
 #completeForm img {
@@ -206,16 +212,26 @@ button#cancel:hover, button.cancel:hover {
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #completeForm p {
   font-family: "Benton Sans", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
+  text-align: center;
+  max-width: 170px;
 }
 
 #completeForm button {
   display: block;
   margin: 0 auto;
+  margin-top: 20px;
+  background-color: #bebebe;
+  color: #ffffff
+}
+
+#completeForm button:hover {
+  background-color: #a9a9a9;
 }
 
 .leaflet-right.leaflet-bottom .leaflet-control-minimap{
@@ -263,7 +279,11 @@ button#cancel:hover, button.cancel:hover {
 // }
 
 input:not([type='submit']):not([type='reset']):not([type='button']):invalid {
-    border-color: black;
+    border-color: #bebebe;
+}
+
+textarea:invalid {
+  border-color: #bebebe;
 }
 
 #toggle label {
@@ -271,7 +291,7 @@ input:not([type='submit']):not([type='reset']):not([type='button']):invalid {
   margin-right: 5px;
   font-family: "Benton Sans", sans-serif;
   color: black;
-  font-size: 15px;
+  font-size: 14px;
   text-transform: uppercase;
 }
 

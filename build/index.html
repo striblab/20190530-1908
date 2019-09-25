@@ -43,11 +43,11 @@
     window.Bugsnag = { use: function() { }};
     window.FeatureAPI_JS_TipsNavigation = false
   </script><!-- Shared styles --><link href="http://www.startribune.com/vendor/css/startribune.css?d=1557335304056" rel="stylesheet" type="text/css"><!-- Desktop assets -->
-    <link href="http://assets.startribune.com/static/css/screen.css?d=1569422942227" rel="stylesheet" type="text/css">
+    <link href="http://assets.startribune.com/static/css/screen.css?d=1569437547084" rel="stylesheet" type="text/css">
 
-    <script src="http://assets.startribune.com/static/vendor/jquery/dist/jquery.min.js?d=1569422942227"></script>
-    <script src="http://assets.startribune.com/static/min/header.min.js?d=1569422942227"></script>
-    <script src="http://assets.startribune.com/static/min/footer.min.js?d=1569422942227"></script><!-- Shared scripts --><script src="http://www.startribune.com/vendor/js/shims.js?d=1569422942227"></script><!-- <script src="http://www.startribune.com/vendor/js/bugsnag.js?d=1557335304056"></script> --><script src="http://www.startribune.com/vendor/js/startribune.js?d=1569422942227"></script>
+    <script src="http://assets.startribune.com/static/vendor/jquery/dist/jquery.min.js?d=1569437547084"></script>
+    <script src="http://assets.startribune.com/static/min/header.min.js?d=1569437547084"></script>
+    <script src="http://assets.startribune.com/static/min/footer.min.js?d=1569437547084"></script><!-- Shared scripts --><script src="http://www.startribune.com/vendor/js/shims.js?d=1569437547084"></script><!-- <script src="http://www.startribune.com/vendor/js/bugsnag.js?d=1557335304056"></script> --><script src="http://www.startribune.com/vendor/js/startribune.js?d=1569437547084"></script>
 
 		<style>
 			
@@ -185,7 +185,7 @@
           <div class="instructions">
             <img src="./assets/images/1x/grey.svg">
             <p>
-              <b>To read:</b> Click a marker and read the note
+              <b>To read:</b> Click a marker to read more about it
             </p>
 
           </div>
@@ -218,12 +218,14 @@
     <div id="sidebar">
       <div id="form">
           <form id="test-form" autocomplete="off">
-              <input type="text" id="nC" name="name" placeholder="What's this landmark called?" required>
-              <input type="text" id="dC" name="description" placeholder="What's your observation?" maxlength="150" required>
+              <input type="text" id="nC" name="name" placeholder="Name your location" required>
+              <!-- <input type="text" id="dC" name="description" placeholder="What's your observation?" maxlength="150" required /> -->
+              <textarea name="description" rows="16" cols="50" maxlength="450" style="resize: none;" placeholder="Add a detail about your location (keep it to 50 words or less)" required></textarea>
               <input type="hidden" id="xC" name="x" value="0" placeholder="x coordinate">
               <input type="hidden" id="yC" name="y" value="0" placeholder="y coordinate">
               <button type="submit" class="submit-form">Submit</button>
               <button type="button" id="cancel">Cancel</button>
+
           </form>
       </div>
 
@@ -251,11 +253,11 @@
 
     <div id="buttons">
       <div class="navbutton" id="in">
-        <img src="./assets/images/1x/zoom.png" alt="zoom in">
+        <img src="./assets/images/1x/in.svg" alt="zoom in">
         Zoom In
       </div>
       <div class="navbutton" id="out">
-        <img src="./assets/images/1x/zoomout.png" alt="zoom out">
+        <img src="./assets/images/1x/out.svg" alt="zoom out">
         Zoom Out
       </div>
     </div>

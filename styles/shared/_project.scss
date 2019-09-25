@@ -181,6 +181,10 @@ p {
       font-weight: normal;
   }
 
+  .byline p {
+    margin-bottom: 0.3em;
+  }
+
   section.body {
       padding-top: 20px;
       margin-bottom: 45px;
@@ -196,11 +200,12 @@ p {
   }
 
   h2 {
-      font-size: 1.2em;
-      text-align: left;
+      font-size: 1em;
+      text-align: right;
       font-family: 'Benton Sans';
       font-weight: bold;
       padding: 0 0;
+      margin-right: 10px;
   }
 
   .rule {
