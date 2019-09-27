@@ -319,10 +319,10 @@ $("button#cancel").on("click", function() {
     if (marker) {
       map.removeLayer(marker);
     }
-    
-      var thisThing = $(this).parent();
 
-      console.log(thisThing.serializeObject());
+    var thisThing = $(this).parent();
+
+    console.log(thisThing.serializeObject());
 
     x.preventDefault();
     var jqxhr = $.ajax({
@@ -331,22 +331,55 @@ $("button#cancel").on("click", function() {
       dataType: "json",
       data: thisThing.serializeObject()
     })
-  
+
     $("#nC").attr("value","");
     $("#dC").attr("value","");
     $("#nC").val("");
     $("#dC").val("");
     $("#xC").attr("value","");
     $("#yC").attr("value","");
-  
+
     x.stopPropagation();
 
     $("#sidebarContent").attr('style', 'display:none');
     $('#form').attr('style', 'display:none');
     $('#completeForm').attr('style', 'display:block');
-  
+
     $(this).closest('form').find("input[type=text], textarea").val("");
   });
+
+    // $('#test-form').on('submit', function(x) {
+    //   if (marker) {
+    //     map.removeLayer(marker);
+    //   }
+    //
+    //     var thisThing = $(this).parent();
+    //
+    //     console.log(thisThing.serializeObject());
+    //
+    //   x.preventDefault();
+    //   var jqxhr = $.ajax({
+    //     url: 'https://script.google.com/macros/s/AKfycbxvOIFKfULZyWdztfhh303O5WuBtZEsrvAspTwQ19THfHK8MGc/exec',
+    //     method: "GET",
+    //     dataType: "json",
+    //     data: thisThing.serializeObject()
+    //   })
+    //
+    //   $("#nC").attr("value","");
+    //   $("#dC").attr("value","");
+    //   $("#nC").val("");
+    //   $("#dC").val("");
+    //   $("#xC").attr("value","");
+    //   $("#yC").attr("value","");
+    //
+    //   x.stopPropagation();
+    //
+    //   $("#sidebarContent").attr('style', 'display:none');
+    //   $('#form').attr('style', 'display:none');
+    //   $('#completeForm').attr('style', 'display:block');
+    //
+    //   $(this).closest('form').find("input[type=text], textarea").val("");
+    // });
 
 
 $('button.cancel').on('click', function() {
@@ -424,3 +457,61 @@ $(function() {
     });
 
 });
+
+// mobile accordion js
+// var acc = document.getElementsByClassName("accordion");
+// var i;
+//
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function(e) {
+//     e.preventDefault();
+//     const active = document.querySelector('.active');
+//     const panel = active.nextElementSibling;
+//     if(active){
+//       active.classList.remove('active');
+//       panel.style.display = "none";
+//     }
+//     else {
+//       e.currentTarget.classList.add('active');
+//       if (panel.style.display === "block") {
+//         panel.style.display = "none";
+//       } else {
+//         panel.style.display = "block";
+//       }
+//     }
+//
+//     // /* Toggle between adding and removing the "active" class,
+//     // to highlight the button that controls the panel */
+//     // this.classList.toggle("active");
+//     //
+//     // /* Toggle between hiding and showing the active panel */
+//     // var panel = this.nextElementSibling;
+//     // if (panel.style.display === "block") {
+//     //   panel.style.display = "none";
+//     // } else {
+//     //   panel.style.display = "block";
+//     // }
+//   });
+// }
+
+var acc = document.getElementsByClassName("accordion");
+var panel = document.getElementsByClassName('panel');
+
+for (var i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() {
+        var setClasses = !this.classList.contains('active');
+        setClass(acc, 'active', 'remove');
+        setClass(panel, 'show', 'remove');
+
+        if (setClasses) {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+        }
+    }
+}
+
+function setClass(els, className, fnName) {
+    for (var i = 0; i < els.length; i++) {
+        els[i].classList[fnName](className);
+    }
+}
