@@ -74,23 +74,28 @@
 
         <div id="selector">
           <section class="main">
-                <!-- <div class="wrapper-demo"></div> -->
-        </section>
+
+          </section>
         </div>
         </div>
 
       <div id="sidebar">
         <div id="form">
-            <form id="test-form" autocomplete="off">
-                <input type="text" id="nC" name="name" placeholder="Name your location" required />
-                <!-- <input type="text" id="dC" name="description" placeholder="What's your observation?" maxlength="150" required /> -->
-                <textarea name="description" id="dC" rows="16" cols="50" maxlength="450" style="resize: none;" placeholder="Add a detail about your location (keep it to 50 words or less)" required></textarea>
-                <input type="hidden" id="xC" name="x" value="0" placeholder="x coordinate">
-                <input type="hidden" id="yC" name="y" value="0" placeholder="y coordinate">
-                <button type="submit" class="submit-form">Submit</button>
-                <button type="button" id="cancel">Cancel</button>
-
+            <form>
+              <p id="locationError">
+                Please enter a location
+              </p>
+              <input type="text" id="nC" name="name" placeholder="Name your location" />
+              <p id="descError">
+                Please enter a description
+              </p>
+              <textarea name="description" id="dC" rows="16" cols="50" maxlength="450" style="resize: none;" placeholder="Add a detail about your location (keep it to 50 words or less)"></textarea>
+              <input type="hidden" id="xC" name="x" value="0" placeholder="x coordinate">
+              <input type="hidden" id="yC" name="y" value="0" placeholder="y coordinate">
+              <button type="button" class="submit-form">Submit</button>
+              <button type="button" id="cancel">Cancel</button>
             </form>
+
         </div>
 
         <div id="sidebarContent" style="display:none">
@@ -139,34 +144,9 @@
 
     <div id="mobileContainer">
 
-      <!-- <div class="mobile-card">
-        <img src="./assets/images/panel1mobile.jpg"/>
-        <img src="./assets/images/test_card.jpg"/>
-        <button class="accordion">1. Electrical Wires</button>
-        <div class="panel">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-        </div>
-
-        <button class="accordion">2. Another example</button>
-        <div class="panel">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-        </div>
-
-        <button class="accordion">3. A third example</button>
-        <div class="panel">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-        </div>
-      </div> -->
-
       <div class="mobile-card">
-        <img class="pano" src="./assets/images/test_mobile.png"/>
-        <img class="slice" src="./assets/images/new_test.jpg"/>
+        <img class="pano" src="./assets/images/cards/1.png"/>
+        <img class="slice" src="./assets/images/cards/1.jpg"/>
 
         <button class="accordion active">1. Electrical Wires</button>
         <div class="panel show">
@@ -194,8 +174,163 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
         </div>
+      </div>
 
-        <button class="accordion">5. A fifth example</button>
+      <div class="mobile-card">
+        <img class="pano" src="./assets/images/cards/2.png"/>
+        <img class="slice" src="./assets/images/cards/2.jpg"/>
+
+        <button class="accordion active">5. Electrical Wires</button>
+        <div class="panel show">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">6. Another example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">7. A third example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+        <button class="accordion">8. Another example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+      </div>
+
+      <div class="mobile-card">
+        <img class="pano" src="./assets/images/cards/3.png"/>
+        <img class="slice" src="./assets/images/cards/3.jpg"/>
+
+        <button class="accordion active">9. Electrical Wires</button>
+        <div class="panel show">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">10. Another example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">11. A third example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+        <button class="accordion">12. Another example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mobile-card">
+        <img class="pano" src="./assets/images/cards/4.png"/>
+        <img class="slice" src="./assets/images/cards/4.jpg"/>
+
+        <button class="accordion active">13. Electrical Wires</button>
+        <div class="panel show">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">14. Another example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+      </div>
+
+      <div class="mobile-card">
+        <img class="pano" src="./assets/images/cards/5.png"/>
+        <img class="slice" src="./assets/images/cards/5.jpg"/>
+
+        <button class="accordion active">15. Electrical Wires</button>
+        <div class="panel show">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">16. Another example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">17. A third example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+      </div>
+
+      <div class="mobile-card">
+        <img class="pano" src="./assets/images/cards/6.png"/>
+        <img class="slice" src="./assets/images/cards/6.jpg"/>
+
+        <button class="accordion active">18. Electrical Wires</button>
+        <div class="panel show">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">19. Another example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">20. A third example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+        <button class="accordion">21. Another example</button>
+        <div class="panel">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mobile-card">
+        <img class="pano" src="./assets/images/cards/7.png"/>
+        <img class="slice" src="./assets/images/cards/7.jpg"/>
+
+        <button class="accordion active">22. Electrical Wires</button>
+        <div class="panel show">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+
+        <button class="accordion">23. Another example</button>
         <div class="panel">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
