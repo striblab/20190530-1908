@@ -1,0 +1,104 @@
+  @media screen and (max-width: 480px) {
+    #desktopContainer {
+      display: none;
+    }
+    #mobileContainer {
+      display: block;
+    }
+    .container-lg h1 {
+      font-size: 51px;
+    }
+    #mobileContainer h2 {
+      max-width: 300px;
+      text-align: center;
+      display: block;
+      margin: 50px auto;
+      font-family: "Benton Sans", sans-serif;
+      font-weight: 400;
+    }
+    .mobile-card {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 25px;
+      margin-top: 100px;
+    }
+    .mobile-card .accordion {
+      background-color: #f9f9f9;
+      color: #909090;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+      border-radius: 0;
+      font-family: "Benton Sans", sans-serif;
+      font-size: 15px;
+    }
+
+    .mobile-card .accordion:not(:first-child) {
+      border-top: solid 1px #dddddd;
+    }
+
+    .mobile-card .active, .mobile-card .accordion:hover {
+      background-color: #ececec;
+      color: #444;
+      box-shadow: 0 0 0;
+      font-weight: bold;
+    }
+
+    .mobile-card .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+    }
+
+    .mobile-card .panel p {
+      margin-top: 10px;
+      font-size: 14px;
+      font-family: "Benton Sans", sans-serif;
+    }
+
+    // span.icon {
+    //   float: right;
+    //   color: blue;
+    //   font-size: 15px;
+    // }
+
+    .mobile-card button.accordion::after {
+      content: "+"; /* Unicode character for "plus" sign (+) */
+      font-family: "Benton Sans", sans-serif;
+      color: #909090;
+      font-size: 20px;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .mobile-card button.active::after {
+      content: "—"; /* Unicode character for "minus" sign (-) */
+      font-family: "Benton Sans", sans-serif;
+      font-weight: bold;
+      color: #444;
+      font-size: 12px;
+      float: right;
+      margin-left: 2px;
+    }
+
+    .mobile-card img.slice {
+      border-top: 1px solid #dddddd;
+      border-right: 1px solid #dddddd;
+      border-left: 1px solid #dddddd;
+      border-bottom: none;
+    }
+
+    .mobile-card img.pano {
+      margin-bottom: 6px;
+    }
+
+    div.panel.show {
+      display: block !important;
+    }
+
+  }

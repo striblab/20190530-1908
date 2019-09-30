@@ -135,10 +135,6 @@ var map = L.map('image-map', {
     $('#image-map').css('cursor', 'url(./assets/images/1x/newmouse.png) 20 20, auto')
   });
 
-  // map.on('mouseup', function() {
-  //   $('#image-map').css('cursor', 'auto')
-  // });
-
 
 // register locations on map
 // we should look into adding a marker on click so that people know what they're adding
@@ -228,7 +224,7 @@ for (var i = 0; i < test.length; i++) {
   reader_points.push(new L.Marker.Custom([x,y], {icon: orangeIcon, name: loc_name, description: desc, lat: x, long: y}));
 }
 
-var experts = L.featureGroup(expert_points).on("click", function(event) {
+var readers = L.featureGroup(reader_points).on("click", function(event) {
   var source = event.sourceTarget;
 
   if (marker) {
@@ -250,7 +246,7 @@ var experts = L.featureGroup(expert_points).on("click", function(event) {
 })
 .addTo(map);
 
-var readers = L.featureGroup(reader_points).on("click", function(event) {
+var experts = L.featureGroup(expert_points).on("click", function(event) {
   var source = event.sourceTarget;
 
   if (marker) {
@@ -290,9 +286,10 @@ $("button#cancel").on("click", function() {
     map.removeLayer(marker);
     sidebar.hide();
     $(this).closest('form').find("input[type=text], textarea").val("");
-    // map.on('mouseover', function() {
-    //   $('#image-map').css('cursor', 'url(./assets/images/1x/plus.png) 12.5 25, auto')
-    // });
+    $('#dC').css('border', '1px solid #bebebe');
+    $('#nC').css('border', '1px solid #bebebe');
+    $('#form form #descError').hide();
+    $('#form form #locationError').hide();
   }
 });
 
@@ -316,13 +313,30 @@ $("button#cancel").on("click", function() {
 
   $('.submit-form').on('click', function(x) {
 
-    if (marker) {
-      map.removeLayer(marker);
-    }
-    
-      var thisThing = $(this).parent();
+    if ($('#nC').val() == '' || $('#dC').val() == '') {
+      if ($('#nC').val() == '') {
+        $('#nC').css('border', '1px solid red');
+        $('#locationError').css('display', 'block');
+      }
+      else if ($('#nC').val()) {
+        $('#nC').css('border', '1px solid #bebebe');
+        $('#locationError').css('display', 'none');
+      }
 
-      console.log(thisThing.serializeObject());
+      if ($('#dC').val() == '') {
+        $('#dC').css('border', '1px solid red');
+        $('#descError').css('display', 'block');
+      }
+      else {
+        $('#dC').css('border', '1px solid #bebebe');
+        $('#descError').css('display', 'none');
+      }
+    }
+    else {
+
+    var thisThing = $(this).parent();
+
+    console.log(thisThing.serializeObject());
 
     x.preventDefault();
     var jqxhr = $.ajax({
@@ -331,23 +345,33 @@ $("button#cancel").on("click", function() {
       dataType: "json",
       data: thisThing.serializeObject()
     })
-  
+
     $("#nC").attr("value","");
     $("#dC").attr("value","");
     $("#nC").val("");
     $("#dC").val("");
     $("#xC").attr("value","");
     $("#yC").attr("value","");
-  
+
     x.stopPropagation();
+
+    if (marker) {
+      map.removeLayer(marker);
+    }
 
     $("#sidebarContent").attr('style', 'display:none');
     $('#form').attr('style', 'display:none');
     $('#completeForm').attr('style', 'display:block');
-  
-    $(this).closest('form').find("input[type=text], textarea").val("");
-  });
 
+    $('#dC').css('border', '1px solid #bebebe');
+    $('#nC').css('border', '1px solid #bebebe');
+    $('#descError').css('display', 'none');
+    $('#locationError').css('display', 'none');
+
+    $(this).closest('form').find("input[type=text], textarea").val("");
+
+  }
+});
 
 $('button.cancel').on('click', function() {
   sidebar.hide();
@@ -373,54 +397,76 @@ $('#staff').on('click', function() {
   map.addLayer(experts);
 });
 
-function DropDown(el) {
-    this.dd = el;
-    this.placeholder = this.dd.children('span');
-    this.opts = this.dd.find('ul.dropdown > li');
-    this.val = '';
-    this.index = -1;
-    this.initEvents();
-}
-DropDown.prototype = {
-    initEvents: function() {
-        var obj = this;
+// function DropDown(el) {
+//     this.dd = el;
+//     this.placeholder = this.dd.children('span');
+//     this.opts = this.dd.find('ul.dropdown > li');
+//     this.val = '';
+//     this.index = -1;
+//     this.initEvents();
+// }
+// DropDown.prototype = {
+//     initEvents: function() {
+//         var obj = this;
+//
+//         obj.dd.on('click', function(event) {
+//             $(this).toggleClass('active');
+//             return false;
+//         });
+//
+//         obj.opts.on('click', function() {
+//             var opt = $(this);
+//             obj.val = opt.text();
+//             obj.index = opt.index();
+//             obj.placeholder.text(obj.val);
+//         });
+//     },
+//     getValue: function() {
+//         return this.val;
+//     },
+//     getIndex: function() {
+//         return this.index;
+//     }
+// }
+//
+// $('#nav').on('mouseover', function() {
+//   $('#image-map').css('cursor', 'pointer')
+// })
+//
+// $("leaflet-marker-icon").on("click", function() {
+//   sidebar.toggle();
+// })
 
-        obj.dd.on('click', function(event) {
-            $(this).toggleClass('active');
-            return false;
-        });
+// $(function() {
+//
+//     var dd = new DropDown($('#dd'));
+//     var dd2 = new DropDown($('#ddY'));
+//
+//     $(document).click(function() {
+//         // all dropdowns
+//         $('.wrapper-dropdown-1').removeClass('active');
+//     });
 
-        obj.opts.on('click', function() {
-            var opt = $(this);
-            obj.val = opt.text();
-            obj.index = opt.index();
-            obj.placeholder.text(obj.val);
-        });
-    },
-    getValue: function() {
-        return this.val;
-    },
-    getIndex: function() {
-        return this.index;
+// });
+
+var acc = document.getElementsByClassName("accordion");
+var panel = document.getElementsByClassName('panel');
+
+for (var i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() {
+        var setClasses = !this.classList.contains('active');
+        setClass(acc, 'active', 'remove');
+        setClass(panel, 'show', 'remove');
+
+        if (setClasses) {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+        }
     }
 }
 
-$('#nav').on('mouseover', function() {
-  $('#image-map').css('cursor', 'pointer')
-})
-
-$("leaflet-marker-icon").on("click", function() {
-  sidebar.toggle();
-})
-
-$(function() {
-
-    var dd = new DropDown($('#dd'));
-    var dd2 = new DropDown($('#ddY'));
-
-    $(document).click(function() {
-        // all dropdowns
-        $('.wrapper-dropdown-1').removeClass('active');
-    });
-
-});
+function setClass(els, className, fnName) {
+    for (var i = 0; i < els.length; i++) {
+        els[i].classList[fnName](className);
+    }
+}
