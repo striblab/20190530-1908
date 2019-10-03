@@ -4,6 +4,7 @@
     }
     #mobileContainer {
       display: block;
+      margin: 0 auto;
     }
     .container-lg h1 {
       font-size: 51px;
@@ -34,7 +35,7 @@
       transition: 0.4s;
       border-radius: 0;
       font-family: "Benton Sans", sans-serif;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .mobile-card .accordion:not(:first-child) {
@@ -91,6 +92,7 @@
       border-right: 1px solid #dddddd;
       border-left: 1px solid #dddddd;
       border-bottom: none;
+      margin-bottom: -6px;
     }
 
     .mobile-card img.pano {
@@ -99,6 +101,11 @@
 
     div.panel.show {
       display: block !important;
+    }
+
+    #mobileContainer #followUp {
+      margin-left: 20px;
+      margin-right: 20px;
     }
 
   }

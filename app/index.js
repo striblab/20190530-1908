@@ -5,12 +5,12 @@ import utils from './shared/utils.js';
 utils.environmentNoting();
 
 import dataLoad from '../sources/data/locations.json';
+
+// THIS WILL BE THE JSON FILE HOLDING READER POINTS
 import test_data from '../sources/data/test_data.json';
 
 var locations = dataLoad.locations;
 var test = test_data.data;
-
-
 
 //leaflet map stuff
 L.Map.addInitHook('addHandler', 'cursor', L.CursorHandler);
@@ -71,11 +71,11 @@ var map = L.map('image-map', {
 //image options
   var w = 1460,
       h = 230.461,
-      url = './assets/images/panorama_test3.jpg';
+      url = 'https://static.startribune.com/news/projects/all/20190530-1908/assets/images/panorama_cropped.jpg';
 
-  var southWest = map.unproject([0, h], map.getMaxZoom()-1);
-  var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
-  var bounds = new L.LatLngBounds(southWest, northEast);
+  var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
+  var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
+  var bounds = new L.LatLngBounds(southWest, northEast).pad(.05);
 
   L.imageOverlay(url, bounds).addTo(map);
 
@@ -84,42 +84,42 @@ var map = L.map('image-map', {
 
   // icon initialization
   var greenIcon = L.icon({
-	   iconUrl: './assets/images/1x/green.png',
-	   shadowUrl: './assets/images/1x/shadow.png',
+	   iconUrl: 'https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/green.png',
+	   shadowUrl: 'https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/shadow.png',
 
-	   iconSize:     [25, 25], // size of the icon
-	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [12.5, 25], // point of the icon which will correspond to marker's location
-	   shadowAnchor: [0, 0],  // the same for the shadow
-	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
+	   iconSize:     [25, 25],
+	   shadowSize:   [1, 1],
+     iconAnchor:   [12.5, 25],
+	   shadowAnchor: [0, 0],
+	   popupAnchor:  [5,0]
   });
 
   var orangeIcon = L.icon({
-	   iconUrl: './assets/images/1x/reader.png',
-	   shadowUrl: './assets/images/1x/shadow.png',
+	   iconUrl: 'https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/reader.png',
+	   shadowUrl: 'https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/shadow.png',
 
-	   iconSize:     [25, 25], // size of the icon
-	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [12.5, 25], // point of the icon which will correspond to marker's location
-	   shadowAnchor: [0, 0],  // the same for the shadow
-	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
+	   iconSize:     [25, 25],
+	   shadowSize:   [1, 1],
+     iconAnchor:   [12.5, 25],
+	   shadowAnchor: [0, 0],
+	   popupAnchor:  [5,0]
   });
 
   var userMarker = L.icon({
-	   iconUrl: './assets/images/1x/smallorange.png',
-	   shadowUrl: './assets/images/1x/shadow.png',
+	   iconUrl: 'https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/smallorange.png',
+	   shadowUrl: 'https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/shadow.png',
 
-	   iconSize:     [40, 40], // size of the icon
-	   shadowSize:   [1, 1], // size of the shadow
-     iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
-	   shadowAnchor: [0, 0],  // the same for the shadow
-	   popupAnchor:  [5,0] // point from which the popup should open relative to the iconAnchor
+	   iconSize:     [40, 40],
+	   shadowSize:   [1, 1],
+     iconAnchor:   [20, 20],
+	   shadowAnchor: [0, 0],
+	   popupAnchor:  [5,0]
   });
 
   var marker;
 
   map.on('mouseover', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/newmouse.png) 20 20, auto')
+    $('#image-map').css('cursor', 'url(https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/newmouse.png) 20 20, auto')
   });
 
   map.on('drag', function() {
@@ -127,17 +127,16 @@ var map = L.map('image-map', {
   });
 
   map.on('mousedown', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/smallorange.png) 20 20, auto')
+    $('#image-map').css('cursor', 'url(https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/smallorange.png) 20 20, auto')
   });
 
 
   map.on('mouseup', function() {
-    $('#image-map').css('cursor', 'url(./assets/images/1x/newmouse.png) 20 20, auto')
+    $('#image-map').css('cursor', 'url(https://static.startribune.com/news/projects/all/20190530-1908/assets/images/1x/newmouse.png) 20 20, auto')
   });
 
 
 // register locations on map
-// we should look into adding a marker on click so that people know what they're adding
   map.on('click', function(e) {
 
     var popLocation = e.latlng;
@@ -270,7 +269,6 @@ var experts = L.featureGroup(expert_points).on("click", function(event) {
 
 
 // button functionality
-
 $("#experts").on("click", function() {
   map.removeLayer(group2);
   group1.addTo(map);
@@ -396,58 +394,6 @@ $('#staff').on('click', function() {
   map.removeLayer(experts);
   map.addLayer(experts);
 });
-
-// function DropDown(el) {
-//     this.dd = el;
-//     this.placeholder = this.dd.children('span');
-//     this.opts = this.dd.find('ul.dropdown > li');
-//     this.val = '';
-//     this.index = -1;
-//     this.initEvents();
-// }
-// DropDown.prototype = {
-//     initEvents: function() {
-//         var obj = this;
-//
-//         obj.dd.on('click', function(event) {
-//             $(this).toggleClass('active');
-//             return false;
-//         });
-//
-//         obj.opts.on('click', function() {
-//             var opt = $(this);
-//             obj.val = opt.text();
-//             obj.index = opt.index();
-//             obj.placeholder.text(obj.val);
-//         });
-//     },
-//     getValue: function() {
-//         return this.val;
-//     },
-//     getIndex: function() {
-//         return this.index;
-//     }
-// }
-//
-// $('#nav').on('mouseover', function() {
-//   $('#image-map').css('cursor', 'pointer')
-// })
-//
-// $("leaflet-marker-icon").on("click", function() {
-//   sidebar.toggle();
-// })
-
-// $(function() {
-//
-//     var dd = new DropDown($('#dd'));
-//     var dd2 = new DropDown($('#ddY'));
-//
-//     $(document).click(function() {
-//         // all dropdowns
-//         $('.wrapper-dropdown-1').removeClass('active');
-//     });
-
-// });
 
 var acc = document.getElementsByClassName("accordion");
 var panel = document.getElementsByClassName('panel');
