@@ -1,141 +1,117 @@
 {
   "locations": [{
-      "name": "International Exposition Building",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -7.786376953,
-      "y": 137.9375
+      "name": "Industrial Exposition Building",
+      "description": "The center was the city’s attempt to outdo the State Fair. Its first expo featured fine art and what was then high-tech industry — brickmaking and milling machines. The Grand Old Party nominated President Benjamin Harrison for re-election here in the 1892 Republican National Convention. In 1903, the building was taken over by International Stock Foods Co., run by Marion Savage, who owned one of the era’s most famous racehorses — Dan Patch",
+      "x": -7.232421875,
+      "y": 143.3125
     },
     {
       "name": "Metropolitan Opera house",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -14.72387695,
-      "y": 64.5
+      "description": "Soot may have obscured the 1894 nameplate carving, but this was indeed Minneapolis’ grand Metropolitan Opera house. The Romanesque Revival theater was designed by a local architect who specialized in entertainment venues, including a few brothels. “In its heyday the Metropolitan was the center of theater activity in the northwest,” the Minneapolis Star reported in 1937, the year the building was demolished.",
+      "x": -15.47558594,
+      "y": 62.109375
     },
     {
-      "name": "I am for men",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -16.90362549,
-      "y": 106.1328125
+      "name": "'I am for men' ad",
+      "description": "This sales pitch for cigars came from a speech by Henry George, a liberal economist who ran for mayor of New York City in the 1890s. The union ally silenced a crowd of laborers when he said he wouldn’t do special favors for “the laboring man.” “I am for men,” George said. “The equal rights of all men. Let us be done with asking privileges for the laboring man.” George never became mayor. He died hours after he delivered the speech.",
+      "x": -17.88623047,
+      "y": 107.8828125
     },
     {
       "name": "Short-lived First National Bank",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -16.83068848,
-      "y": 34.234375
+      "description": "The bank opened just months before this photo was taken. Considered the best equipped bank in the city at the time, thousands came to marvel at its interior, which was decorated in a cream-and-gold scheme. Despite its lavish look, the bank didn’t last. It was demolished in 1914 to make way for the First National Soo Line Building, making it “perhaps the shortest-lived bank in Twin Cities history,” according to the book “Twin Cities: Then and Now.”",
+      "x": -17.94433594,
+      "y": 28.59375
     },
     {
       "name": "Panorama Building",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -13.91662598,
-      "y": 36.0390625
+      "description": "The Panorama Building went up in 1886 and instantly drew crowds with a massive 360-degree panorama showing the Civil War’s Battle of Atlanta. “The spectator does not see walls of canvas and paint, but seems actually to gaze for miles in every direction upon an animated landscape,” the Minneapolis Tribune reported. By 1907, the building no longer housed a panorama. It was a furniture showroom, which it remained until the 1920s.",
+      "x": -14.58935547,
+      "y": 30.3359375
     },
     {
-      "name": "Horse rear ends",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -13.93487549,
-      "y": 133.7929688
+      "name": "Horse stables",
+      "description": "Local photo enthusiast Mike Evangelist, who connected the images and shared a version of panorama a few years ago, spotted this detail in a building near the river. Those are the rear ends of horses lined up at Harwood Manufacturing Company’s livery stable. Harwood made barrels and later sacks for the city’s flour industry. The building, which now houses offices, was recently rebranded as the Barrel House.",
+      "x": -14.47045898,
+      "y": 138.0507813
     },
     {
-      "name": "Immaculate Conception Church",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -8.924438477,
-      "y": 67.8828125
-    },
-    {
-      "name": "Non-existent suburbs",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -5.541625977,
-      "y": 131.640625
+      "name": "The Church of the Immaculate Conception",
+      "description": "The Church of the Immaculate Conception, built in 1868, was home to the city’s Catholics, who were raising money for much grander future digs, the Basilica of St. Mary. (The Basilica opened in 1914.) The peculiar structure in the 3rd Street roadway is an “underway” passage leading to the freight houses and tracks below street level, according to architectural historian Larry Millett. The underway remained until at least the 1970s.",
+      "x": -8.970458984,
+      "y": 65.55859375
     },
     {
       "name": "Nicollet Island packed with buildings",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -9.776000977,
-      "y": 122.625
+      "description": "Before it was leveled to make way for parkland, Nicollet Island was densely packed with commercial and industrial buildings. A sliver of the building called the William Bros. Boiler Works lives on as Nicollet Island Pavilion. Another building nearby became Nicollet Island Inn. The Minnesota Bee-Supply Co., shown in the photo, is what you might expect. An ad from the time says it sold “everything used by beekeepers.”",
+      "x": -9.507385254,
+      "y": 132.9966431
     },
     {
       "name": "Metropolitan Building Roof Garden",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "description": "The Minneapolis Institute of Art has a painting called “On a Roof Garden,” by W.A. Rogers. It depicts swells enjoying drinks on a roof garden, high above the noisy world. It’s not just any old roof garden, it’s the Metropolitan Building (aka Northwestern Guaranty Loan Building), the enormous office building whose demolition in 1961 is still lamented. Newspaper accounts of the building’s opening day in 1890 reference the roof garden, so we know Rogers’ tableau wasn’t fanciful.",
       "x": -11.1749324405711,
       "y": 76.89423253592
     },
     {
       "name": "Donaldson's",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -8.29313856719888,
-      "y": 19.9823659694221
+      "description": "In 1907, a Donaldsons addition — the city’s tallest retail structure — was almost complete. It was on the other end of the block from Donaldsons’ gleaming white Glass Block, whose alabaster dome can be seen in the panorama, to the right. (The dome would be removed during World War II, and the metal used for the war effort.)",
+      "x": -8.453735352,
+      "y": 11.921875
     },
     {
       "name": "Burlington Northern ad",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -8.87601948350406,
-      "y": 10.111729162413
-    },
-    {
-      "name": "Holmes Hotel",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -8.874218464,
-      "y": 24.59407761
+      "description": "<b>(Click the marker again to get a closer view)</b><br/><br/> The Burlington Route railway was one of the country’s largest. At the time this ad was created, James J. Hill’s Great Northern railway was one of its owners, along with the Northern Pacific. Two popular destinations are noted in the ad: Chicago and St. Louis, which could be reached on the Bee Line. The original name survives in the BNSF Railway (Burlington-Northern-Santa-Fe).",
+      "x": -8.813110352,
+      "y": 1.9375
     },
     {
       "name": "Theater Posters",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -22.0317597,
-      "y": 38.4547671009424
+      "description": "The marquee of the Bijou, at 20 Washington Av. N., helped date this panorama. The play, “A Fighting Chance,” was on stage in September 1907. The reviewer for the Minneapolis Morning Tribune did not approve of the production, which included a fake marriage, prison breaks and a bloody shootout. The theater remained open until 1959, and was razed the next year.",
+      "x": -23.2043457,
+      "y": 31.3125
     },
     {
       "name": "Electrical Wires",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -24.5016982020295,
-      "y": 8.09549745697637
+      "description": "The city had several utility companies in 1907. Consolidation wouldn’t begin until 1909, when H.M. Byllesby, an apprentice of Thomas Edison, would begin to buy up companies to form the firm later known as NSP. There were few utility poles in downtown, however. The lines had been run under the street at the end of the 19th century. But some buildings were connected by wires that ran from rooftop to rooftop, draped on sawhorses.",
+      "x": -25.72717285,
+      "y": -1.4296875
     },
     {
       "name": "Anna Held Cigars",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -9.25152875175682,
-      "y": 119.767223505342
+      "description": "The painted ad for a cheroot bears the name of Anna Held, an actress and singer who was famous for singing racy songs and revealing her legs on stage. When she died in 1918, Carl Sandburg wrote a poem about her. Her longtime partner was the famous impresario Flo Ziegfeld, but the two never married. Flo went on to marry Billie Burke, the actress who played Glinda, the Good Witch of the North, in “The Wizard of Oz.”",
+      "x": -9.133422852,
+      "y": 122.65625
     },
     {
       "name": "Corn Exchange",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -18.8186146179281,
-      "y": 160.567331845693
-    },
-    {
-      "name": "Vet & Stable",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -25.8695011,
-      "y": 97.96069786
-    },
-    {
-      "name": "Rothschild construction",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -14.8496941977687,
-      "y": 57.8840458921901
+      "description": "Designed by the local firm of Long & Kees, the 1885 Corn Exchange was torn down in 1965. It wasn’t as showy as the firm’s riotously ornamented Masonic Temple on Hennepin Avenue (now known as the Hennepin Center for the Arts), but the exchange had a sober dignity.",
+      "x": -23.3918457,
+      "y": 166.75
     },
     {
       "name": "Palace Statue",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -11.2984037875196,
-      "y": 62.3761007889061
-    },
-    {
-      "name": "Youman Hotel",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -24.95775164,
-      "y": 16.28049389
+      "description": "Why is there a statue of a man on top of this building? We don’t know the answer, but we do know the building — it’s the Palace Clothiers. It was the second location for Maurice Rothschild’s store. Rothschild was building a new eight-story headquarters next to the Palace. It’s almost finished in this photo. Both buildings were demolished in 1960 for the Sheraton-Ritz Hotel.",
+      "x": -11.6418457,
+      "y": 59.484375
     },
     {
       "name": "The man behind the prophecy",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "x": -12.74673462,
-      "y": 98.68945313
+      "description": " Real estate developer Edmund Walton foretold the city’s population reaching 400,000 by 1910 on this sign. He missed the mark by 100,000, although the city had grown a whopping 48% when it barely passed 300,000 people in the 1910 census. That would happen to be the same year Walton wrote the first racial covenant into a deed in the city, blocking homeowners from selling their property to members of minority groups, according to researchers at the Mapping Prejudice project.",
+      "x": -13.17749023,
+      "y": 99.80078125
     },
     {
       "name": "Old City Hall",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "description": "When built in 1873, the old City Hall was in the Gateway District, then the center of commercial activity. Minneapolis had joined with St. Anthony the previous year, and needed a place to consolidate its management. City Hall was a slender structure, just four stories tall, but still had room for a post office and the Minneapolis Tribune. The distinctive mansard roof was a hallmark of the Second Empire Style, which we associate today with haunted houses. It was demolished in 1912.",
       "x": -10.64712524,
       "y": 92.50195313
+    },
+    {
+      "name": "The West Hotel",
+      "description": "Luxe lodging arrived when the West Hotel opened in 1884. Its famously large and opulent lobby became a gathering place for local boldface names and visiting celebs of the era, including Mark Twain and a young Winston Churchill. The distinctive brick-and-marble striping on its lower floors makes it easy to spot in old photos. In 1907, that exterior was masked by soot from coal smoke.",
+      "x": -10.03466797,
+      "y": 39.328125
     }
   ]
 }
