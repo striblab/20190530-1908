@@ -310,6 +310,22 @@ $("button#cancel").on("click", function() {
      return o;
   };
 
+  var searchMarker;
+
+  $('#searchCoord').on('click', function() {
+
+    var x = $('#searchX').val();
+    var y = $('#searchY').val();
+
+    if (searchMarker) {
+      map.removeLayer(searchMarker);
+    }
+    searchMarker = new L.Marker([x,y], {icon: greenIcon}).addTo(map);
+    
+    map.flyTo([$('#searchX').val(), $('#searchY').val()], 8);
+
+  });
+
   $('.submit-form').on('click', function(x) {
 
     if ($('#nC').val() == '' || $('#dC').val() == '') {
