@@ -7,6 +7,7 @@ utils.environmentNoting();
 import dataLoad from '../sources/data/locations.json';
 
 // THIS WILL BE THE JSON FILE HOLDING READER POINTS
+// import test_data from '../sources/data/reader_locations.json';
 import test_data from '../sources/data/test_data.json';
 
 var locations = dataLoad.locations;
@@ -216,8 +217,8 @@ for (var i = 0; i < locations.length; i++) {
 
 var reader_points = [];
 for (var i = 0; i < test.length; i++) {
-  var x = test[i].x2;
-  var y = test[i].y2;
+  var x = test[i].x;
+  var y = test[i].y;
   var loc_name = test[i].name;
   var desc = test[i].description;
   reader_points.push(new L.Marker.Custom([x,y], {icon: orangeIcon, name: loc_name, description: desc, lat: x, long: y}));
